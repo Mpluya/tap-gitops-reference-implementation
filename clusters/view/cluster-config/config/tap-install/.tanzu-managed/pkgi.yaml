@@ -17,7 +17,6 @@ spec:
       constraints: #@ data.values.tap_install.version.package_version
   values:
     - secretRef:
-        name: tap-sensitive-values
-    - secretRef:
         name: tap-values
-
+    - secretRef:
+        name: tap-sensitive-values
