@@ -15,7 +15,11 @@ spec:
     kind: SecretStore
   refreshInterval: "0m"
   target:
-    type: kubernetes.io/ssh-auth
+    template:
+      type: kubernetes.io/ssh-auth
+      data:
+        ssh-knownhosts: "{{ .ssh-knownhosts | b64dec }}"
+        ssh-privatekey: "{{ .private-key | b64dec }}"
   data:
     - secretKey: ssh-privatekey
       remoteRef: #@ data.values.secrets.eso.remote_refs.sync_git_ssh.ssh_private_key
