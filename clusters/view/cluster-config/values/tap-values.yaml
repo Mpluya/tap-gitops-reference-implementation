@@ -13,9 +13,6 @@ tap_install:
         service:
           type: LoadBalancer
     tap_gui:
-      tls:
-        namespace: tap-install
-        secretName: tap-gui-cert
       service_type: ClusterIP
       app_config:
         auth:
