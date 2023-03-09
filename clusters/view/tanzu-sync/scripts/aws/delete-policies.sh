@@ -19,7 +19,7 @@ EOF
 }
 
 for envvar in AWS_ACCOUNT_ID EKS_CLUSTER_NAME ; do
-  if [[ ! -v ${envvar} ]]; then
+  if [[ -z ${envvar} ]]; then
     usage
     echo "${envvar} must be set, but was not."
     exit 1
