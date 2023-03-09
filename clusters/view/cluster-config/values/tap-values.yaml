@@ -25,6 +25,7 @@ tap_install:
             github:
               development:
                 clientId: 735ec722b8914b709330
+                clientSecret: pooooo
         organization:
           name: "Global Tech Team"
         catalog:
