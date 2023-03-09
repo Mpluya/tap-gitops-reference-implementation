@@ -18,8 +18,8 @@ spec:
     template:
       type: kubernetes.io/ssh-auth
       data:
-        ssh-knownhosts: "{{ .ssh_knownhosts | b64dec }}"
-        ssh-privatekey: "{{ .ssh_privatekey | b64dec }}"
+        ssh-knownhosts: "{{ .ssh_knownhosts }}"
+        ssh-privatekey: "{{ .ssh_privatekey }}"
   data:
     - secretKey: ssh_privatekey
       remoteRef: #@ data.values.secrets.eso.remote_refs.sync_git_ssh.ssh_private_key
