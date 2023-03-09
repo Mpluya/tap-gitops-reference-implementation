@@ -19,6 +19,12 @@ tap_install:
         secretName: tap-gui-cert
       service_type: ClusterIP
       app_config:
+        auth:
+          environment: development
+          providers:
+            github:
+              development:
+                clientId: 735ec722b8914b709330
         organization:
           name: "Global Tech Team"
         catalog:
