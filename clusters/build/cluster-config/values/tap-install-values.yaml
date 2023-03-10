@@ -1,15 +1,18 @@
-profile: build
-ceip_policy_disclosed: true 
+---
+tap_install:
+  values:
+    profile: build
+    ceip_policy_disclosed: true 
 
-shared:
-  ingress_domain: build.prep.tapsme.org
-  image_registry:
-    project_path: "index.docker.io/tapsme"
-    username: tapsme
-    password:
+    shared:
+      ingress_domain: build.prep.tapsme.org
+      image_registry:
+        project_path: "index.docker.io/tapsme"
+        username: tapsme
+        password:
 
-supply_chain: basic
+    supply_chain: basic
 
-ootb_supply_chain_basic:
-  gitops:
-    ssh_secret: "" 
+    ootb_supply_chain_basic:
+      gitops:
+        ssh_secret: "" 
