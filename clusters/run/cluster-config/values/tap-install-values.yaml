@@ -1,3 +1,21 @@
+---
 tap_install:
   package_repository:
     oci_repository: index.docker.io/tapsme/tap-packages
+  values:
+    profile: run
+    ceip_policy_disclosed: true 
+    shared:
+      ingress_domain: run.prep.tapsme.org
+      ingress_issuer: letsencrypt-production
+    supply_chain: basic
+    contour:
+      envoy:
+        service:
+          type: LoadBalancer
+    appliveview_connector:
+      backend:
+        ingressEnabled: true
+        host: appliveview.view.prep.tapsme.org
+    cnrs:
+      domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
