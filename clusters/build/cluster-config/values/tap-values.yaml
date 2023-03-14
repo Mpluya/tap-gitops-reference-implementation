@@ -8,8 +8,6 @@ tap_install:
       ingress_domain: build.prep.tapsme.org
       image_registry:
         project_path: "index.docker.io/tapsme"
-        username: "KP-DEFAULT-REPO-USERNAME"
-        password: "KP-DEFAULT-REPO-PASSWORD"
     
     supply_chain: basic
 
