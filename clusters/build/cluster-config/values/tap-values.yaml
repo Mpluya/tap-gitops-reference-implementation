@@ -1,0 +1,18 @@
+---
+tap_install:
+  values:
+    profile: build
+    ceip_policy_disclosed: true
+
+    shared:
+      ingress_domain: build.prep.tapsme.org
+      image_registry:
+        project_path: "index.docker.io/tapsme"
+        username: "KP-DEFAULT-REPO-USERNAME"
+        password: "KP-DEFAULT-REPO-PASSWORD"
+    
+    supply_chain: basic
+
+    ootb_supply_chain_basic:
+      gitops:
+        ssh_secret: "" # this would be used for connecting to config repo. empty string == don't use ssh
