@@ -5,4 +5,4 @@
 #@overlay/match-child-defaults missing_ok=True
 metadata:
   annotations:
-    tanzu-sync.tanzu.vmware.com/variant: sops
+    tanzu-sync.tanzu.vmware.com/variant: eso
