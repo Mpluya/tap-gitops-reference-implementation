@@ -13,7 +13,7 @@ function usage() {
 }
 
 for envvar in INSTALL_REGISTRY_USERNAME INSTALL_REGISTRY_PASSWORD INSTALL_REGISTRY_HOSTNAME KAPP_KUBECONFIG_CONTEXT ; do
-  if [[ -z ${envvar} ]]; then
+  if [[ ! -v ${envvar} ]]; then
     usage
     echo "Expected env var ${envvar} to be set, but was not."
     exit 1
