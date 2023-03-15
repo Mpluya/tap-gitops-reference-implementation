@@ -9,8 +9,17 @@ tap_install:
       image_registry:
         project_path: "index.docker.io/tapsme"
     
-    supply_chain: basic
+    supply_chain: testing_scanning
 
-    ootb_supply_chain_basic:
+    ootb_supply_chain_testing:
       gitops:
         ssh_secret: ""
+      scanning:
+        image:
+          policy: lax-scan-policy
+        source:
+          policy: lax-scan-policy
+
+    scanning:
+      metadataStore:
+        url: ""
