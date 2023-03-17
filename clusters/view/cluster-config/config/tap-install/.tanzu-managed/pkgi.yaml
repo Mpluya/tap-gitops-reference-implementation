@@ -15,8 +15,6 @@ spec:
     refName: tap.tanzu.vmware.com
     versionSelection:
       constraints: #@ data.values.tap_install.version.package_version
-      prereleases:
-        identifiers: [rc]
   values:
     - secretRef:
         name: tap-values
