@@ -23,3 +23,10 @@ tap_install:
     scanning:
       metadataStore:
         url: ""
+
+    namespace_provisioner:
+      controller: false
+      gitops_install:
+        ref: origin/main
+        subPath: ns-provisioner-samples/gitops-install
+        url: https://github.com/vmware-tanzu/application-accelerator-samples.git
