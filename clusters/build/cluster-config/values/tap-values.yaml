@@ -35,6 +35,7 @@ tap_install:
           secretRef:
             name: sync-git-ssh
             namespace: tanzu-sync
+            create_export: true
         path: _ytt_lib/custom-resources
       gitops_install:
         ref: origin/main
