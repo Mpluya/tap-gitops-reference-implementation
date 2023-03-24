@@ -34,6 +34,7 @@ tap_install:
           subPath: custom-resources
           secretRef:
             name: sync-git-ssh
+            namespace: tanzu-sync
         path: _ytt_lib/custom-resources
       gitops_install:
         ref: origin/main
