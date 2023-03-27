@@ -40,7 +40,7 @@ tap_install:
       controller: false
       additional_sources:
       - git:
-          url: ssh://git@github.com/Mpluya/tap-namespaces
+          url: git@github.com/Mpluya/tap-namespaces.git
           ref: origin/main
           subPath: credentials
           secretRef:
@@ -48,7 +48,7 @@ tap_install:
             namespace: tanzu-sync
         path: _ytt_lib/credentials-setup
       - git:
-          url: ssh://git@github.com/Mpluya/tap-namespaces
+          url: git@github.com/Mpluya/tap-namespaces.git
           ref: origin/main
           subPath: custom-resources
           secretRef:
@@ -59,11 +59,10 @@ tap_install:
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
-        url: ssh://git@github.com/Mpluya/tap-namespaces
+        url: git@github.com/Mpluya/tap-namespaces.git
         secretRef:
             name: sync-git-ssh-too
             namespace: tanzu-sync
-            create_export: true
       import_data_values_secrets:
       - name: workload-git-auth
         namespace: tap-install
