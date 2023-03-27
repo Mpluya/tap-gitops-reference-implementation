@@ -48,7 +48,3 @@ tap_install:
         ref: origin/main
         subPath: ns-provisioner-base
         url: ssh://git@github.com/Mpluya/tap-namespaces
-      import_data_values_secrets:
-        - name: workload-git-ssh
-          namespace: tap-install
-          create_export: true
