@@ -51,7 +51,7 @@ tap_install:
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
-        url: git@github.com/Mpluya/tap-namespaces
+        url: git@github.com/Mpluya/tap-namespaces.git
         secretRef:
           name: sync-git-ssh-too
           namespace: tanzu-sync
