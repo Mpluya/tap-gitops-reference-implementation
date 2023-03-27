@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: workload-git-auth-overlay
+  name: workload-git-ssh-overlay
   namespace: tap-install
   annotations:
     kapp.k14s.io/change-rule: "delete after deleting tap"
