@@ -39,7 +39,6 @@ tap_install:
     namespace_provisioner:
       controller: false
       additional_sources:
-      # Patches the OOTB default service account to add different secrets
       - git:
           url: ssh://git@github.com/Mpluya/tap-namespaces
           ref: origin/main
