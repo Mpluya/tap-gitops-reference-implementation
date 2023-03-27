@@ -44,7 +44,7 @@ tap_install:
           ref: origin/main
           subPath: credentials
           secretRef:
-            name: sync-git-ssh-too
+            name: sync-git-ssh-also
             namespace: tanzu-sync
         path: _ytt_lib/credentials-setup
       - git:
