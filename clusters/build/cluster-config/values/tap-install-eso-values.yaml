@@ -4,8 +4,8 @@ tap_install:
     eso:
       aws:
         tap_install_secrets:
-          roleARN: arn:aws:iam::375783000519:role/tap-view--tap-install-secrets
+          roleARN: arn:aws:iam::375783000519:role/tap-build--tap-install-secrets
       remote_refs:
         tap_sensitive_values:
           sensitive_tap_values_yaml:
-            key: dev/tap-view/tap/sensitive-values.yaml
+            key: dev/tap-build/tap/sensitive-values.yaml
