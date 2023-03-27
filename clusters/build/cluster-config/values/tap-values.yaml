@@ -51,7 +51,7 @@ tap_install:
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
-        url: ssh://github.com/Mpluya/tap-namespaces.git
+        url: ssh://git@github.com/Mpluya/tap-namespaces.git
       import_data_values_secrets:
       - name: workload-git-auth
         namespace: tap-install
