@@ -46,7 +46,7 @@ tap_install:
           secretRef:
             name: sync-git-ssh-also
             namespace: tanzu-sync
-        path: _ytt_lib/credentials-setup
+        path: _ytt_lib/creds-stuff
       - git:
           url: git@github.com/Mpluya/tap-namespaces.git
           ref: origin/main
