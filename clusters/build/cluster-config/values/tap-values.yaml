@@ -40,7 +40,7 @@ tap_install:
       controller: false
       additional_sources:
       - git:
-          url: git@github.com/Mpluya/tap-namespaces.git
+          url: ssh://git@github.com/Mpluya/tap-namespaces.git
           ref: origin/main
           subPath: credentials
           secretRef:
@@ -49,7 +49,7 @@ tap_install:
             create_export: true
         path: _ytt_lib/creds-stuff
       - git:
-          url: ssh://git@github.com/Mpluya/tap-namespaces
+          url: ssh://git@github.com/Mpluya/tap-namespaces.git
           ref: origin/main
           subPath: custom-resources
           secretRef:
@@ -60,7 +60,7 @@ tap_install:
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
-        url: ssh://github.com/Mpluya/tap-namespaces
+        url: ssh://github.com/Mpluya/tap-namespaces.git
       import_data_values_secrets:
       - name: workload-git-auth
         namespace: tap-install
