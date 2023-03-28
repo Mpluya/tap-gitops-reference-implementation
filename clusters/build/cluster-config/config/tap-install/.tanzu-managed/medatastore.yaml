@@ -23,10 +23,10 @@ spec:
     kind: ClusterSecretStore
   refreshInterval: "0m"
   data:
-  - secretKey: metadatastore_auth_token
+  - secretKey: auth_token
     remoteRef:
       key: dev/tap-build/tap/tenant-install-secrets
-      property: metadatastore_auth_token
+      property: auth_token
 ---
 apiVersion: secretgen.carvel.dev/v1alpha1
 kind: SecretExport
