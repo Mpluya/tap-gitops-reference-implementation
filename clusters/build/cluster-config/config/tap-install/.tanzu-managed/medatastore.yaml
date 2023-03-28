@@ -27,3 +27,21 @@ spec:
     remoteRef:
       key: dev/tap-build/tap/tenant-install-secrets
       property: metadatastore_auth_token
+---
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretExport
+metadata:
+  name: store-ca-cert
+  namespace: metadata-store-secrets
+spec:
+  toNamespaces: 
+  - "*"
+---
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretExport
+metadata:
+  name: store-auth-token
+  namespace: metadata-store-secrets
+spec:
+  toNamespaces: 
+  - "*"
