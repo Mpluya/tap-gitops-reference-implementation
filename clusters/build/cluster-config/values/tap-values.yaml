@@ -66,7 +66,7 @@ tap_install:
           namespace: tanzu-sync
           create_export: true
       import_data_values_secrets:
-      - name: workload-git-auth
+      - name: tenant-secrets
         namespace: tap-install
         create_export: true
       overlay_secrets:
