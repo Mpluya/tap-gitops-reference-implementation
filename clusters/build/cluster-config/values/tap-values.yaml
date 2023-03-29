@@ -13,7 +13,12 @@ tap_install:
 
     ootb_supply_chain_testing_scanning:
       gitops:
-        ssh_secret: ""
+        ssh_secret: "git-auth"
+        server_address: "ssh://git@github.com"
+        repository_owner: "Mpluya"
+        repository_name: "tap-workload-config-repo"
+        branch: main
+      
       scanning:
         image:
           policy: lax-scan-policy
