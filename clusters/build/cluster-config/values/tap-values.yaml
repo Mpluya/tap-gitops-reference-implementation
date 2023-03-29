@@ -8,14 +8,14 @@ tap_install:
       ingress_domain: build.prep.tapsme.org
     
     buildservice:
-      kp_default_repository: "registry.harbor.learn.tapsme.org/unicorn-fullbuild-service"
+      kp_default_repository: "registry.harbor.learn.tapsme.org/tap-build/build-service"
 
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing_scanning:
       registry:
         server: registry.harbor.learn.tapsme.org
-        repository: unicorn-full
+        repository: tap-build
       gitops:
         ssh_secret: ""
       scanning:
