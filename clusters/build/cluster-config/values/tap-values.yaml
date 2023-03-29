@@ -6,9 +6,10 @@ tap_install:
 
     shared:
       ingress_domain: build.prep.tapsme.org
-      image_registry:
-        project_path: "registry.harbor.learn.tapsme.org/tap-build"
     
+    buildservice:
+      kp_default_repository: "registry.harbor.learn.tapsme.org/tap-build/build-service"
+
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing:
