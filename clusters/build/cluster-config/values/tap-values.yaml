@@ -12,6 +12,9 @@ tap_install:
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing:
+      registry:
+        server: registry.harbor.learn.tapsme.org
+        repository: tap-build
       gitops:
         ssh_secret: ""
       scanning:
