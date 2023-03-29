@@ -7,7 +7,7 @@ tap_install:
     shared:
       ingress_domain: build.prep.tapsme.org
       image_registry:
-        project_path: "registry.harbor.learn.tapsme.org/unicorn-full"
+        project_path: "registry.harbor.learn.tapsme.org/tap-build"
     
     supply_chain: testing_scanning
 
@@ -22,7 +22,7 @@ tap_install:
 
     grype:
       namespace: dev
-      targetImagePullSecret: "registries-credentials"
+      targetImagePullSecret: "registry-credentials"
       metadataStore:
         url: "https://metadata-store.view.prep.tapsme.org"
         caSecret:
