@@ -1,7 +1,5 @@
 ---
 tap_install:
-  package_repository:
-    oci_repository: index.docker.io/tapsme/tap-packages
   values:
     profile: run
     ceip_policy_disclosed: true 
