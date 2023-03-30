@@ -21,16 +21,6 @@ tap_install:
       domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
     namespace_provisioner:
       controller: false
-      additional_sources:
-      - git:
-          url: ssh://git@github.com/Mpluya/tap-namespaces
-          ref: origin/main
-          subPath: credentials
-          secretRef:
-            name: sync-git-ssh-also
-            namespace: tanzu-sync
-            create_export: true
-        path: _ytt_lib/workload-creds
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
