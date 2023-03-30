@@ -43,7 +43,3 @@ tap_install:
       - name: tenant-secrets
         namespace: tap-install
         create_export: true
-      overlay_secrets:
-      - name: workload-git-ssh-overlay
-        namespace: tap-install
-        create_export: true
