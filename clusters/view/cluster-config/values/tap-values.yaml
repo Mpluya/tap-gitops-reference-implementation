@@ -33,6 +33,7 @@ tap_install:
 
     appliveview:
       ingressEnabled: true
+      ingress_issuer: letsencrypt-production
 
     accelerator:
       ingress:
