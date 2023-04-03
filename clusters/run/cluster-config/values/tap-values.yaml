@@ -45,3 +45,6 @@ tap_install:
       - name: workload-git-ssh-overlay
         namespace: tap-install
         create_export: true
+    api_auto_registration:
+      tap_gui_url: "https://tap-gui.view.prep.tapsme.org"
+      cluster_name: run
