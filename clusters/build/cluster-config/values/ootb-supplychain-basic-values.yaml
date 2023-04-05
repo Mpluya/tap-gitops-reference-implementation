@@ -1,7 +1,7 @@
 ---
 tap_install:
   values:
-    ootb_supplychain_basic_install:
+    ootb_supplychain_basic:
       registry:                                 
         ca_cert_data: ""                        
         server: registry.harbor.learn.tapsme.org
