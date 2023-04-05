@@ -16,6 +16,4 @@ spec:
       constraints: 0.12.5
   values:
     - secretRef:
-        name: tap-values
-    - secretRef:
-        name: tap-sensitive-values
+        name: ootb-basic-values
