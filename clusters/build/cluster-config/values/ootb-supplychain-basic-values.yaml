@@ -1,0 +1,13 @@
+---
+ootb_supplychain_basic_install:
+  registry:                                 
+    ca_cert_data: ""                        
+    server: registry.harbor.learn.tapsme.org
+    repository: tap-build/workloads         
+  external_delivery: true  
+  gitops:
+    ssh_secret: "git-auth"
+    server_address: "ssh://git@github.com"
+    repository_owner: "Mpluya"
+    repository_name: "tap-workload-config-repo"
+    branch: main
