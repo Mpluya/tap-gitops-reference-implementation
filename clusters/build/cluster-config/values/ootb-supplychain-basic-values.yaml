@@ -1,5 +1,3 @@
-#@data/values
----
 ootb_supplychain_basic_install:
   registry:                                 
     ca_cert_data: ""                        
