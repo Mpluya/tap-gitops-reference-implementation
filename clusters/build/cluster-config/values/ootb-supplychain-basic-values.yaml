@@ -3,7 +3,9 @@ ootb_supplychain_basic_install:
     ca_cert_data: ""                        
     server: registry.harbor.learn.tapsme.org
     repository: tap-build/workloads         
-  external_delivery: true  
+  external_delivery: true
+  carvel_package:
+    workflow_enabled: true
   gitops:
     ssh_secret: "git-auth"
     server_address: "ssh://git@github.com"
