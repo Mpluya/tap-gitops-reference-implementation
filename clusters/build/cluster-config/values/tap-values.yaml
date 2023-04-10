@@ -9,6 +9,10 @@ tap_install:
       image_registry:  
         project_path: "registry.harbor.learn.tapsme.org/tap-build"
 
+    buildservice:
+      stack_configuration: jammy-only
+      exclude_dependencies: true
+
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing_scanning:
