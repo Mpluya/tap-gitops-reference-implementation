@@ -10,13 +10,8 @@ function usage() {
   echo "- EKS_CLUSTER_NAME -- cluster on which TAP is being installed (and has been configured to be an OIDC Provider"
 }
 
-for envvar in EKS_CLUSTER_NAME ; do
-  if [[ -z ${envvar} ]]; then
-    usage
-    echo "Expected env var ${envvar} to be set, but was not."
-    exit 1
-  fi
-done
+error_msg="Expected env var to be set, but was not."
+: "${EKS_CLUSTER_NAME?$error_msg}"
 
 set -x
 eksctl delete iamserviceaccount \
