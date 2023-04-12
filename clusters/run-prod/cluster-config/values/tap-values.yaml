@@ -19,4 +19,4 @@ tap_install:
       domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
     api_auto_registration:
       tap_gui_url: "https://tap-gui.view.prep.tapsme.org"
-      cluster_name: run
+      cluster_name: run-prod
