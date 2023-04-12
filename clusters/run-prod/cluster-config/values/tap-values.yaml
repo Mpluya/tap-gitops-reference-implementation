@@ -1,0 +1,22 @@
+---
+tap_install:
+  values:
+    profile: run
+    ceip_policy_disclosed: true 
+    shared:
+      ingress_domain: run-prod.prep.tapsme.org
+      ingress_issuer: letsencrypt-production
+    supply_chain: basic
+    contour:
+      envoy:
+        service:
+          type: LoadBalancer
+    appliveview_connector:
+      backend:
+        ingressEnabled: true
+        host: appliveview.view.prep.tapsme.org
+    cnrs:
+      domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
+    api_auto_registration:
+      tap_gui_url: "https://tap-gui.view.prep.tapsme.org"
+      cluster_name: run
