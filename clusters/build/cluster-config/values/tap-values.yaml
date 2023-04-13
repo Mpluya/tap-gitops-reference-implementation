@@ -11,7 +11,6 @@ tap_install:
 
     buildservice:
       stack_configuration: jammy-only
-      exclude_dependencies: true
 
     supply_chain: testing_scanning
 
