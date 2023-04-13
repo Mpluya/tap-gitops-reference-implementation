@@ -13,15 +13,11 @@ spec:
   secretStoreRef:
     name: tanzu-sync-secrets
     kind: SecretStore
-  refreshInterval: "0m"
+  refreshInterval: "1m"
   target:
-    template:
-      type: kubernetes.io/ssh-auth
-      data:
-        ssh-knownhosts: "{{ .ssh_knownhosts }}"
-        ssh-privatekey: "{{ .ssh_privatekey }}"
+    type: kubernetes.io/ssh-auth
   data:
-    - secretKey: ssh_privatekey
+    - secretKey: ssh-privatekey
       remoteRef: #@ data.values.secrets.eso.remote_refs.sync_git_ssh.ssh_private_key
-    - secretKey: ssh_knownhosts
+    - secretKey: ssh-knownhosts
       remoteRef: #@ data.values.secrets.eso.remote_refs.sync_git_ssh.ssh_known_hosts

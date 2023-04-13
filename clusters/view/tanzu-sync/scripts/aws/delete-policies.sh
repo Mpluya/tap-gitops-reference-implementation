@@ -18,13 +18,9 @@ Optional (if unset, default values are deleted):
 EOF
 }
 
-for envvar in AWS_ACCOUNT_ID EKS_CLUSTER_NAME ; do
-  if [[ -z ${envvar} ]]; then
-    usage
-    echo "${envvar} must be set, but was not."
-    exit 1
-  fi
-done
+error_msg="Expected env var to be set, but was not."
+: "${AWS_ACCOUNT_ID?$error_msg}"
+: "${EKS_CLUSTER_NAME?$error_msg}"
 
 IAM_POLICY_NAME_FOR_TANZU_SYNC=${IAM_POLICY_NAME_FOR_TANZU_SYNC:-${EKS_CLUSTER_NAME}--read-tanzu-sync-secrets}
 IAM_POLICY_NAME_FOR_TAP=${IAM_POLICY_NAME_FOR_TAP:-${EKS_CLUSTER_NAME}--read-tap-secrets}
