@@ -6,3 +6,12 @@ metadata:
   annotations:
     eks.amazonaws.com/role-arn: arn:aws:iam::375783000519:role/crossplane-provider-upbound-aws
 spec:
+---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-aws
+spec:
+  package: xpkg.upbound.io/upbound/provider-aws:0.33.0
+  controllerConfigRef:
+    name: irsa-controllerconfig
