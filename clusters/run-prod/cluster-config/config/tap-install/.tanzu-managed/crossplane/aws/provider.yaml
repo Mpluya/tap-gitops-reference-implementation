@@ -15,3 +15,11 @@ spec:
   package: xpkg.upbound.io/upbound/provider-aws:v0.33.0
   controllerConfigRef:
     name: irsa-controllerconfig
+---
+apiVersion: aws.upbound.io/v1beta1
+kind: ProviderConfig
+metadata:
+  name: default
+spec:
+  credentials:
+    source: IRSA
