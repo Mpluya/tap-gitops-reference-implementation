@@ -23,7 +23,7 @@ spec:
           name: sync-git-ssh
         subPath: #@ data.values.git.sub_path
   template:
-    - ytt:
+    - ytt: 
         paths: 
         - config
         valuesFrom:
