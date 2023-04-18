@@ -14,8 +14,8 @@ metadata:
   name: provider-aws
   annotations:
     kapp.k14s.io/change-group: "xplane-upbound-aws-provider"
-    kapp.k14s.io/change-rule.0: "upsert after upserting xplane-controller-config"
-    kapp.k14s.io/change-rule.1: "delete before deleting xplane-controller-config"
+    kapp.k14s.io/change-rule.upsert-provider: "upsert after upserting xplane-controller-config"
+    kapp.k14s.io/change-rule.delete-provider: "delete before deleting xplane-controller-config"
 spec:
   package: xpkg.upbound.io/upbound/provider-aws:v0.33.0
   controllerConfigRef:
@@ -26,8 +26,8 @@ kind: ProviderConfig
 metadata:
   name: default
   annotations:
-    kapp.k14s.io/change-rule.0: "upsert after upserting xplane-upbound-aws-provider"
-    kapp.k14s.io/change-rule.1: "delete before deleting xplane-upbound-aws-provider"
+    kapp.k14s.io/change-rule.upsert-provider-config: "upsert after upserting xplane-upbound-aws-provider"
+    kapp.k14s.io/change-rule.delete-provider-config: "delete before deleting xplane-upbound-aws-provider"
 spec:
   credentials:
     source: IRSA
