@@ -17,7 +17,7 @@ spec:
   - ytt:
       valuesFrom: 
         - secretRef:
-          name: ootb-basic-values
+            name: ootb-basic-values
   deploy:
   - kapp:
       rawOptions:
