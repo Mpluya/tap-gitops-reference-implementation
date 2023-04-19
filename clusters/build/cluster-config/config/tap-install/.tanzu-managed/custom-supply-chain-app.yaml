@@ -1,0 +1,25 @@
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: custom-supply-chain
+  namespace: tap-install
+spec:
+  serviceAccountName: tap-installer-sa
+  fetch:
+  - git:
+      url: ssh://git@github.com/Mpluya/custom-supply-chain
+      ref: origin/main
+      secretRef: 
+        name: sync-git-ssh
+      subPath: config
+  template:
+  - ytt:
+      valuesFrom: 
+        - secretRef:
+            name: ootb-basic-values
+  deploy:
+  - kapp:
+      rawOptions:
+      - --dangerous-allow-empty-list-of-resources=true
+      - --diff-changes=true
