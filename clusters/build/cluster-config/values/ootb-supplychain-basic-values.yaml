@@ -22,6 +22,9 @@ ootb_supplychain_basic_install:
       commit_branch: ""
       pull_request_title:
       pull_request_body:
+  cluster_builder: default
+  service_account: default
+  git_implementation: go-git
   supported_workloads:
   - type: web
     cluster_config_template_name: config-template
