@@ -12,6 +12,15 @@ ootb_supplychain_basic_install:
     repository_owner: "Mpluya"
     repository_name: "tap-workload-config-repo"
     branch: main
+    username: supplychain
+    email: supplychain
+    commit_message: supplychain@cluster.local
+    commit_strategy: direct
+    pull_request:
+      server_kind:
+      commit_branch: ""
+      pull_request_title:
+      pull_request_body:
   supported_workloads:
   - type: web
     cluster_config_template_name: config-template
