@@ -3,7 +3,7 @@ apiVersion: kappctrl.k14s.io/v1alpha1
 kind: App
 metadata:
   name: custom-supply-chain
-  namespace: tap-install
+  namespace: tanzu-sync
 spec:
   serviceAccountName: tap-installer-sa
   fetch:
