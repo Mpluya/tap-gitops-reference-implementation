@@ -14,7 +14,10 @@ spec:
         name: sync-git-ssh
       subPath: config
   template:
-  - ytt: {}
+  - ytt:
+      valuesFrom: 
+        - secretRef:
+          name: ootb-basic-values
   deploy:
   - kapp:
       rawOptions:
