@@ -7,6 +7,7 @@ ootb_supplychain_basic_install:
   carvel_package:
     workflow_enabled: true
   gitops:
+    repository_prefix:
     ssh_secret: "git-auth"
     server_address: "ssh://git@github.com"
     repository_owner: "Mpluya"
