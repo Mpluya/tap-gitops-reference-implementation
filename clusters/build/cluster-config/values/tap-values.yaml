@@ -9,6 +9,10 @@ tap_install:
       image_registry:  
         project_path: "registry.harbor.learn.tapsme.org/tap-build"
 
+    buildservice:
+      injected_sidecar_support: true
+
+
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing_scanning:
