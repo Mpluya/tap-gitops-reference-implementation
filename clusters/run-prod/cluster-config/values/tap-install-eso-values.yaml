@@ -12,9 +12,12 @@ tap_install:
             key: dev/tap-run-prod/tap/sensitive-values.yaml
           ca_cluster_issuer_values:
             ca_crt:
-              key: dev/tap-run-prod/tanzu-sync/ca-cluster-issuer-keys
+              key: dev/tap-run-prod/tap/ca-cluster-issuer-keys
               property: ca.crt
-            ca_key:
-              key: dev/tap-run-prod/tanzu-sync/ca-cluster-issuer-keys
-              property: ca.key
+            tls_crt:
+              key: dev/tap-run-prod/tap/ca-cluster-issuer-keys
+              property: tls.crt
+            tls_key:
+              key: dev/tap-run-prod/tap/ca-cluster-issuer-keys
+              property: tls.key
 
