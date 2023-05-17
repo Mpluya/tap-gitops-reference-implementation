@@ -13,11 +13,11 @@ tap_install:
           ca_cluster_issuer_values:
             ca_crt:
               key: dev/tap-run-prod/tap/ca-cluster-issuer-keys
-              property: ca.crt
+              property: ca_crt
             tls_crt:
               key: dev/tap-run-prod/tap/ca-cluster-issuer-keys
-              property: tls.crt
+              property: tls_crt
             tls_key:
               key: dev/tap-run-prod/tap/ca-cluster-issuer-keys
-              property: tls.key
+              property: tls_key
 
