@@ -34,5 +34,5 @@ ootb_supplychain_basic_install:
     cluster_config_template_name: worker-template
   maven:
     repository:
-      url: "https://repo.maven.apache.org/maven2"
-      secret_name:
+      url: "https://artifactory.shared.learn.tapsme.org/artifactory/"
+      secret_name: maven-secret
