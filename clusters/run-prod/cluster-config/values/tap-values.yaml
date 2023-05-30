@@ -51,3 +51,4 @@ tap_install:
       cluster_name: run-prod
     excluded_packages:
     - bitnami.services.tanzu.vmware.com
+    - crossplane.tanzu.vmware.com
