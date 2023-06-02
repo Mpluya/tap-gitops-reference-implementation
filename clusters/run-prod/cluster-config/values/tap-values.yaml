@@ -8,7 +8,6 @@ tap_install:
       ingress_issuer: letsencrypt-production
     supply_chain: basic
     contour:
-      logLevel: debug
       envoy:
         service:
           type: LoadBalancer
@@ -49,4 +48,4 @@ tap_install:
       cluster_name: run-prod
     excluded_packages:
     - bitnami.services.tanzu.vmware.com
-    - crossplane.tanzu.vmware.com
+    - external-secrets.apps.tanzu.vmware.com
