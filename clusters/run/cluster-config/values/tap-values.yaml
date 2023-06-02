@@ -48,5 +48,5 @@ tap_install:
     api_auto_registration:
       tap_gui_url: "https://tap-gui.view.prep.tapsme.org"
       cluster_name: run
-    excluded_package:
+    excluded_packages:
     - external-secrets.apps.tanzu.vmware.com
