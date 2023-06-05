@@ -45,6 +45,11 @@ tap_install:
       metadataStore:
         url: ""
 
+    package_overlays:
+    - name: "ootb-templates"
+      secrets:
+      - name: "clustersourcetemplate-source-template-overlay"
+
     namespace_provisioner:
       controller: false
       additional_sources:
@@ -79,9 +84,6 @@ tap_install:
         create_export: true
       overlay_secrets:
       - name: workload-git-ssh-overlay
-        namespace: tap-install
-        create_export: true
-      - name: clustersourcetemplate-source-template-overlay
         namespace: tap-install
         create_export: true
         
