@@ -11,11 +11,7 @@ stringData:
     #@overlay/match by=overlay.subset({"apiVersion": "carto.run/v1alpha1", "kind": "ClusterSupplyChain","metadata":{"name":"source-test-scan-to-url"}}), expects="0+"
     ---
     spec:
-      resources:
-      - name: source-provider
-        params: 
-        #@overlay/append
-        - name: maven_repository_url
-          default: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
-        - name: maven_repository_secret_name    
-          default: maven-secret
+      params: 
+      #@overlay/remove
+      - name: maven_repository_url
+      - name: maven_repository_secret_name
