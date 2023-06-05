@@ -24,4 +24,4 @@ stringData:
       params:
         #@overlay/match by="name", expects="0+"
         #@overlay/replace via=replace_value_to_default
-        - name: maven_registry_url
+        - name: maven_repository_url
