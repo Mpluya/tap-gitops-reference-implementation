@@ -81,4 +81,6 @@ tap_install:
       - name: workload-git-ssh-overlay
         namespace: tap-install
         create_export: true
+      - name: clustersourcetemplate-source-template-overlay
+        namespace: tap-install
         
