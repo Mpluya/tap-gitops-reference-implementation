@@ -1,4 +1,5 @@
 .idea/
+/not-safe/
 /.catalog/
 /setup-repo.sh
 tanzu-gitops-ri*.tgz
