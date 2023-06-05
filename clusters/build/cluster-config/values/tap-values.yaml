@@ -46,9 +46,6 @@ tap_install:
         url: ""
 
     package_overlays:
-    - name: "ootb-templates"
-      secrets:
-      - name: "clustersourcetemplate-source-template-overlay"
     - name: "ootb-supply-chain-testing-scanning"
       secrets: 
       - name: "clustersupplychain-source-template-overlay"

@@ -12,5 +12,6 @@ stringData:
     ---
     spec:
       params: 
-      #@overlay/remove
+      #@overlay/replace
       - name: maven_repository_url
+      - default: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
