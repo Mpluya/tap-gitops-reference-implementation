@@ -1,17 +1,42 @@
 apiVersion: v1
 kind: Secret
 metadata:
-  name: clustersupplychain-source-template-overlay
+  name: ootb-supply-chain-make-maven-url-param-default
   namespace: tap-install
-  annotations:
-    kapp.k14s.io/change-rule: "delete after deleting tap"
+type: Opaque
 stringData:
-  clustersourcetemplate-source-template-overlay.yaml: |
+  ootb-supply-chain-make-maven-param-default.yaml: |
     #@ load("@ytt:overlay", "overlay")
-    #@overlay/match by=overlay.subset({"apiVersion": "carto.run/v1alpha1", "kind": "ClusterSupplyChain","metadata":{"name":"source-test-scan-to-url"}}), expects="0+"
+    #@ load("@ytt:template", "template")
+    
+    #@ def has_maven_param(i, left, right):
+    #@   if "params" in left:
+    #@     for p in left["params"]:
+    #@       if "name" in p:
+    #@         if p["name"] == "maven_registry_url":
+    #@           return True
+    #@         end
+    #@       end
+    #@     end
+    #@   end
+    #@   return False
+    #@ end
+    
+    #@ def replace_value_to_default(left, right):
+    #@   if "default" in left:
+    #@     return left
+    #@   end
+    #@   param = dict(left)
+    #@   param.update({"default": param.pop("value")})
+    #@   return param
+    #@ end
+    
+    #@overlay/match by=overlay.subset({"kind":"ClusterSupplyChain"}), expects="0+"
     ---
     spec:
-      params: 
-      #@overlay/remove
-      - name: maven_repository_url
-        value: https://repo.maven.apache.org/maven2
+      resources:
+      #@overlay/match by=has_maven_param, expects="0+"
+      - params:
+        #@overlay/match by="name", expects="0+"
+        #@overlay/replace via=replace_value_to_default
+        - name: maven_registry_url
