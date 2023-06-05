@@ -53,9 +53,6 @@ tap_install:
     - name: "ootb-supply-chain-testing-scanning"
       secrets: 
       - name: "ootb-supply-chain-make-maven-url-param-default"
-    - name: "ootb-supply-chain-basic"
-      secrets: 
-      - name: "ootb-supply-chain-make-maven-url-param-default"
 
     namespace_provisioner:
       controller: false
