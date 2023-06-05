@@ -11,7 +11,6 @@ stringData:
     #@overlay/match by=overlay.subset({"apiVersion": "carto.run/v1alpha1", "kind": "ClusterSupplyChain","metadata":{"name":"source-test-scan-to-url"}}), expects="0+"
     ---
     spec:
-      params: 
       #@overlay/remove
+      params: 
       - name: maven_repository_url
-        value: 
