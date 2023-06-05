@@ -13,6 +13,6 @@ stringData:
     params:
       #@overlay/append
       - name: maven_repository_url
-        value: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
+        default: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
       - name: maven_repository_secret_name    
-        value: maven-secret
+        default: maven-secret
