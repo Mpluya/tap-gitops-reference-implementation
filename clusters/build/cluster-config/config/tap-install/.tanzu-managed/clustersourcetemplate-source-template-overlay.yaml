@@ -10,9 +10,10 @@ stringData:
     #@ load("@ytt:overlay", "overlay")
     #@overlay/match by=overlay.subset({"apiVersion": "carto.run/v1alpha1", "kind": "ClusterSourceTemplate","metadata":{"name":"source-template"}}), expects="0+"
     ---
-    params:
-      #@overlay/append
-      - name: maven_repository_url
-        default: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
-      - name: maven_repository_secret_name    
-        default: maven-secret
+    spec:
+      params:
+        #@overlay/append
+        - name: maven_repository_url
+          default: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
+        - name: maven_repository_secret_name    
+          default: maven-secret
