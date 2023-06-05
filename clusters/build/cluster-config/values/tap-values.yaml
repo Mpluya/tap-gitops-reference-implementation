@@ -16,6 +16,10 @@ tap_install:
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing_scanning:
+      maven:
+        repository:
+          url: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
+        secret_name: maven-secret
       gitops:
         ssh_secret: "git-auth"
         server_address: "ssh://git@github.com"
