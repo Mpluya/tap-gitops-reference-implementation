@@ -14,4 +14,3 @@ stringData:
       params: 
       #@overlay/remove
       - name: maven_repository_url
-      - name: maven_repository_secret_name
