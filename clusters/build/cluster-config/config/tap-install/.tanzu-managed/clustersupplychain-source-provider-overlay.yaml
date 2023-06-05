@@ -15,6 +15,6 @@ stringData:
       - name: maven_repository_url 
         #@overlay/remove
         value: 
-        #@overlay/append
+        #@overlay/insert
         default: https://repo.maven.apache.org/maven2
 
