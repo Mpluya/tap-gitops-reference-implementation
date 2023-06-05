@@ -8,20 +8,7 @@ stringData:
   ootb-supply-chain-make-maven-param-default.yaml: |
     #@ load("@ytt:overlay", "overlay")
     #@ load("@ytt:template", "template")
-    
-    #@ def has_maven_param(i, left, right):
-    #@   if "params" in left:
-    #@     for p in left["params"]:
-    #@       if "name" in p:
-    #@         if p["name"] == "maven_registry_url":
-    #@           return True
-    #@         end
-    #@       end
-    #@     end
-    #@   end
-    #@   return False
-    #@ end
-    
+        
     #@ def replace_value_to_default(left, right):
     #@   if "default" in left:
     #@     return left
@@ -34,9 +21,7 @@ stringData:
     #@overlay/match by=overlay.subset({"kind":"ClusterSupplyChain"}), expects="0+"
     ---
     spec:
-      resources:
-      #@overlay/match by=has_maven_param, expects="0+"
-      - params:
+      params:
         #@overlay/match by="name", expects="0+"
         #@overlay/replace via=replace_value_to_default
         - name: maven_registry_url
