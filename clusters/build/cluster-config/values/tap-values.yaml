@@ -49,8 +49,6 @@ tap_install:
     - name: "ootb-templates"
       secrets:
       - name: "clustersourcetemplate-source-template-overlay"
-    - name: "ootb-suppychain"
-      secrets:
       - name: "clustersupplychain-source-template-overlay"
 
     namespace_provisioner:
