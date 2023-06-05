@@ -8,7 +8,7 @@ metadata:
 stringData:
   clustersourcetemplate-source-template-overlay.yaml: |
     #@ load("@ytt:overlay", "overlay")
-    #@overlay/match by=overlay.subset({"apiVersion": "carto.run/v1alpha1", "kind": "ClusterSupplyChain","metadata":{"name":"source-to-url"}}), expects="0+"
+    #@overlay/match by=overlay.subset({"apiVersion": "carto.run/v1alpha1", "kind": "ClusterSupplyChain","metadata":{"name":"source-test-scan-to-url"}}), expects="0+"
     ---
     spec:
       params: 
