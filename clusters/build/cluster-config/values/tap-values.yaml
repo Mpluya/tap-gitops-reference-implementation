@@ -16,6 +16,8 @@ tap_install:
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing_scanning:
+      maven: 
+        url: ""
       gitops:
         ssh_secret: "git-auth"
         server_address: "ssh://git@github.com"
