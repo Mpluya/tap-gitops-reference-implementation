@@ -12,6 +12,6 @@ stringData:
     ---
     spec:
       params: 
-      #@overlay/replace
       - name: maven_repository_url 
-        default: https://repo.maven.apache.org/maven2
+      #@overlay/remove
+        value: 
