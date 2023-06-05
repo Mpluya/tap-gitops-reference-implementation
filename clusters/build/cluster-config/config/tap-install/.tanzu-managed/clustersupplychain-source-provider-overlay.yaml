@@ -14,4 +14,4 @@ stringData:
       params: 
       #@overlay/replace
       - name: maven_repository_url
-        default: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
+        default: https://repo.maven.apache.org/maven2
