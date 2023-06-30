@@ -50,3 +50,4 @@ tap_install:
     - bitnami.services.tanzu.vmware.com
     - external-secrets.apps.tanzu.vmware.com
     - sso.apps.tanzu.vmware.com
+    - crossplane.tanzu.vmware.com
