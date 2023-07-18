@@ -13,9 +13,9 @@ tap_install:
       injected_sidecar_support: true
 
 
-    supply_chain: testing_scanning
+    supply_chain: basic
 
-    ootb_supply_chain_testing_scanning:
+    ootb_supply_basic:
       maven:
         repository:
           url: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
