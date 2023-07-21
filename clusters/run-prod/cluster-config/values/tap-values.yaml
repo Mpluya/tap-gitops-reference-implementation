@@ -49,3 +49,4 @@ tap_install:
     excluded_packages:
     - bitnami.services.tanzu.vmware.com
     - external-secrets.apps.tanzu.vmware.com
+    - sso.apps.tanzu.vmware.com

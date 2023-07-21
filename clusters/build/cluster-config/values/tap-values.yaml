@@ -13,9 +13,13 @@ tap_install:
       injected_sidecar_support: true
 
 
-    supply_chain: testing_scanning
+    supply_chain: basic
 
-    ootb_supply_chain_testing_scanning:
+    ootb_supply_basic:
+      maven:
+        repository:
+          url: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
+          secret_name: maven-secret
       gitops:
         ssh_secret: "git-auth"
         server_address: "ssh://git@github.com"
@@ -44,6 +48,11 @@ tap_install:
     scanning:
       metadataStore:
         url: ""
+
+    package_overlays:
+    - name: "ootb-supply-chain-testing-scanning"
+      secrets: 
+      - name: "ootb-supply-chain-make-maven-url-param-default"
 
     namespace_provisioner:
       controller: false
@@ -81,6 +90,4 @@ tap_install:
       - name: workload-git-ssh-overlay
         namespace: tap-install
         create_export: true
-      - name: clustersourcetemplate-source-template-overlay
-        namespace: tap-install
         
