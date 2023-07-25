@@ -13,5 +13,4 @@ spec:
     tls:
       secretName: tap-gui-cert
 
----
 
