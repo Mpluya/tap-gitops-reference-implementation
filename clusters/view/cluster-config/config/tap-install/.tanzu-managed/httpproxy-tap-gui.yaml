@@ -12,3 +12,18 @@ spec:
     fqdn: tapgui.view.prep.tapsme.org
     tls:
       secretName: tapgui-cert
+
+---
+
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: tapgui-cert-poo
+  namespace: tap-gui
+spec:
+  dnsNames:
+  - tapgui.view.prep.tapsme.org
+  issuerRef:
+    kind: ClusterIssuer
+    name: letsencrypt-staging
+  secretName: tapgui-cert
