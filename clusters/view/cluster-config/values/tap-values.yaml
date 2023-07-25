@@ -6,7 +6,6 @@ tap_install:
 
     shared:
       ingress_domain: view.success.tapsme.org
-      ingress_issuer: ""
 
     contour:
       infrastructure_provider: aws
