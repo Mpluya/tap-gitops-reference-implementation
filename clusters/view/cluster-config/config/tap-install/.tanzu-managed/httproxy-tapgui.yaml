@@ -1,7 +1,7 @@
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
-  name: tap-gui
+  name: tapgui
   namespace: tap-gui
 spec:
   routes:
