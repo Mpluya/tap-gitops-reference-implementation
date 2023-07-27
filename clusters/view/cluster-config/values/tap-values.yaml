@@ -5,8 +5,7 @@ tap_install:
     ceip_policy_disclosed: true
 
     shared:
-      ingress_domain: view.prep.tapsme.org
-      ingress_issuer: letsencrypt-production
+      ingress_domain: view.success.tapsme.org
 
     contour:
       infrastructure_provider: aws
@@ -33,7 +32,7 @@ tap_install:
 
     appliveview:
       ingressEnabled: true
-      ingress_issuer: letsencrypt-production
+      ingress_issuer: letsencrypt-staging
 
     accelerator:
       ingress:

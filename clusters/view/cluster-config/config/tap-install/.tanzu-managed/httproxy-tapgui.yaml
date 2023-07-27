@@ -1,0 +1,16 @@
+apiVersion: projectcontour.io/v1
+kind: HTTPProxy
+metadata:
+  name: tapgui
+  namespace: tap-gui
+spec:
+  routes:
+  - services:
+    - name: server
+      port: 7000
+  virtualhost:
+    fqdn: tapgui.view.success.tapsme.org
+    tls:
+      secretName: tap-gui-cert
+
+
