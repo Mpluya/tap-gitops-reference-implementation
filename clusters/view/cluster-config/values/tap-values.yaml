@@ -19,7 +19,7 @@ tap_install:
         permission:
           enabled: true
           adminRefs:
-            - user:default/x95castle
+            - user:default/x95castle1
         auth:
           environment: development
           providers:
