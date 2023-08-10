@@ -18,6 +18,8 @@ tap_install:
       app_config:
         permission:
           enabled: true
+          adminRefs:
+            - user:default/x95castle1
         auth:
           environment: development
           providers:
