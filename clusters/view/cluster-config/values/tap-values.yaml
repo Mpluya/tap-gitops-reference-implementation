@@ -18,9 +18,6 @@ tap_install:
       app_config:
         permission:
           enabled: true
-          adminRefs:
-            - user:default/x95castle1
-            - user:default/rabeyta
         auth:
           environment: development
           providers:
