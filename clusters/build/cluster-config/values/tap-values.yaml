@@ -12,10 +12,13 @@ tap_install:
     buildservice:
       injected_sidecar_support: true
 
+    ootb_templates:
+      excluded_templates:
+      - 'convention-template'
 
-    supply_chain: basic
+    supply_chain: testing_scanning
 
-    ootb_supply_basic:
+    ootb_supply_chain_testing_scanning:
       maven:
         repository:
           url: https://artifactory.shared.learn.tapsme.org/artifactory/maven-local-tap
