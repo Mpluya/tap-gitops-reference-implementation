@@ -48,8 +48,8 @@ tap_install:
       cluster_name: run
     excluded_packages:
     - external-secrets.apps.tanzu.vmware.com
-        - name: "cnrs"
         
     package_overlays:
+    - name: "cnrs"
       secrets: 
       - name: "config-features-overlay"
