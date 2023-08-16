@@ -12,6 +12,9 @@ tap_install:
     buildservice:
       injected_sidecar_support: true
 
+    ootb_templates:
+      excluded_templates:
+      - 'convention-template'
 
     supply_chain: testing_scanning
 
