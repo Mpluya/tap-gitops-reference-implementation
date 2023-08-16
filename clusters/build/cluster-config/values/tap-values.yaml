@@ -55,9 +55,6 @@ tap_install:
     - name: "ootb-templates"
       secrets: 
       - name: "convention-service-overlay"
-    - name: "cnrs"
-      secrets: 
-      - name: "convention-service-overlay"
 
     namespace_provisioner:
       controller: false
