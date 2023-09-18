@@ -12,10 +12,6 @@ tap_install:
     buildservice:
       injected_sidecar_support: true
 
-    ootb_templates:
-      excluded_templates:
-      - 'convention-template'
-
     supply_chain: testing_scanning
 
     ootb_supply_chain_testing_scanning:
@@ -56,6 +52,9 @@ tap_install:
     - name: "ootb-supply-chain-testing-scanning"
       secrets: 
       - name: "ootb-supply-chain-make-maven-url-param-default"
+    - name: "ootb-templates"
+      secrets: 
+      - name: "convention-service-overlay"
 
     namespace_provisioner:
       controller: false
