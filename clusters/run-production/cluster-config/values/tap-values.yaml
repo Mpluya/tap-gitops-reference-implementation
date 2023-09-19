@@ -23,7 +23,7 @@ tap_install:
           ref: origin/main
           subPath: credentials
           secretRef:
-            name: sync-git-also
+            name: sync-git
             namespace: tanzu-sync
             create_export: true
         path: _ytt_lib/workload-creds
