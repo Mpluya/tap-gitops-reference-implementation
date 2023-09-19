@@ -21,6 +21,7 @@ tap_install:
           enabled: true
           adminRefs:
             - user:default/x95castle1
+            - user:default/mpluya
         auth:
           environment: development
           providers:
