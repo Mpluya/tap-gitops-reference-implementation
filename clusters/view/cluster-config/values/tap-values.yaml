@@ -6,6 +6,7 @@ tap_install:
 
     shared:
       ingress_domain: view.success.tapsme.org
+      ingress_issuer: letsencrypt-production
 
     contour:
       infrastructure_provider: aws
@@ -36,7 +37,7 @@ tap_install:
 
     appliveview:
       ingressEnabled: true
-      ingress_issuer: letsencrypt-staging
+      ingress_issuer: letsencrypt-production
 
     accelerator:
       ingress:
