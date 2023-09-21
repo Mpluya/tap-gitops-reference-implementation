@@ -28,7 +28,7 @@ tap_install:
               user: postgres
             prefix: tap_learn_
         permission:
-          enabled: true
+          enabled: false
           adminRefs:
             - user:default/x95castle1
             - user:default/mpluya
