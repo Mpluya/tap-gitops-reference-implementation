@@ -50,10 +50,6 @@ tap_install:
       ingressEnabled: true
       ingress_issuer: letsencrypt-production
 
-    accelerator:
-      ingress:
-        include: true
-
     metadata_store:
       ingress_enabled: "true"
       app_service_type: "ClusterIP"

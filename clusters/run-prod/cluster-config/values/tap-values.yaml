@@ -2,7 +2,12 @@
 tap_install:
   values:
     profile: run
-    ceip_policy_disclosed: true 
+    ceip_policy_disclosed: true
+
+    appsso:
+      domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
+      default_workload_domain_template: "{{.Name}}-{{.Namespace}}.{{.Domain}}"
+
     shared:
       ingress_domain: run-prod.prep.tapsme.org
       ingress_issuer: letsencrypt-production
