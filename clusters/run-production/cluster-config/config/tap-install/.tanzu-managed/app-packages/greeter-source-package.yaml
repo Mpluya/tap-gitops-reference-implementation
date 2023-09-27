@@ -10,17 +10,16 @@ spec:
       url: ssh://git@github.com/Mpluya/tap-workload-config-repo.git
       ref: origin/main
       secretRef: 
-        name: sync-git-ssh
+        name: sync-git
       subPath: greeter-source-package.dev2.cssa.vmware.com/packages
   - git:
       url: ssh://git@github.com/Mpluya/tap-workload-config-repo.git
       ref: origin/main
       secretRef: 
-        name: sync-git-ssh
-      subPath: greeter-source-package.dev2.cssa.vmware.com/test
+        name: sync-git
+      subPath: greeter-source-package.dev2.cssa.vmware.com/prod
   template:
   - ytt: {}
-  
   deploy:
   - kapp:
       rawOptions: ["--dangerous-allow-empty-list-of-resources=true"]
