@@ -5,7 +5,7 @@ metadata:
   name: greeter-source-package
   namespace: dev2
 spec:
-  serviceAccountName: default
+  serviceAccountName: app-deployer
   fetch:
   - git:
       url: ssh://git@github.com/Mpluya/tap-workload-config-repo.git
