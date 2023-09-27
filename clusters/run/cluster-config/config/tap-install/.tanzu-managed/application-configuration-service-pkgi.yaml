@@ -8,6 +8,7 @@ metadata:
   name: application-configuration-service
   namespace: tap-install
 spec:
+  serviceAccountName: tap-installer-sa
   packageRef:
     refName: application-configuration-service.tanzu.vmware.com
     versionSelection:
