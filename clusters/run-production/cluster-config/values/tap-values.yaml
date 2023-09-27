@@ -32,7 +32,7 @@ tap_install:
           ref: origin/main
           subPath: additional-resources-run
           secretRef:
-            name: sync-git-ssh
+            name: sync-git
             namespace: tanzu-sync
         path: _ytt_lib/addons
       gitops_install:
