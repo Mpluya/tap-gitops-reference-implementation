@@ -1,0 +1,28 @@
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: greeter-source-package
+  namespace: dev2
+spec:
+  serviceAccountName: app-deployer
+  fetch:
+  - git:
+      url: ssh://git@github.com/Mpluya/tap-workload-config-repo.git
+      ref: origin/main
+      secretRef: 
+        name: sync-git-ssh
+      subPath: greeter-source-package.dev2.cssa.vmware.com/packages
+  - git:
+      url: ssh://git@github.com/Mpluya/tap-workload-config-repo.git
+      ref: origin/main
+      secretRef: 
+        name: sync-git-ssh
+      subPath: greeter-source-package.dev2.cssa.vmware.com/test
+  template:
+  - ytt: {}
+  
+  deploy:
+  - kapp:
+      intoNs: dev2
+      rawOptions: ["--dangerous-allow-empty-list-of-resources=true"]
