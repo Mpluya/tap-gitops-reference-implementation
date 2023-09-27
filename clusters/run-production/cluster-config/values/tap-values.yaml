@@ -14,7 +14,7 @@ tap_install:
     appliveview_connector:
       backend:
         ingressEnabled: true
-        host: appliveview.view.prep.tapsme.org
+        host: appliveview.view.success.tapsme.org
     namespace_provisioner:
       controller: false
       additional_sources:
@@ -27,6 +27,14 @@ tap_install:
             namespace: tanzu-sync
             create_export: true
         path: _ytt_lib/workload-creds
+      - git:
+          url: ssh://git@github.com/Mpluya/tap-namespaces
+          ref: origin/main
+          subPath: additional-resources-run
+          secretRef:
+            name: sync-git-ssh
+            namespace: tanzu-sync
+        path: _ytt_lib/addons
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
@@ -44,7 +52,7 @@ tap_install:
         namespace: tap-install
         create_export: true
     api_auto_registration:
-      tap_gui_url: "https://tap-gui.view.prep.tapsme.org"
+      tap_gui_url: "https://tap-gui.view.success.tapsme.org"
       cluster_name: run-production
     excluded_packages:
     - bitnami.services.tanzu.vmware.com
