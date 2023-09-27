@@ -6,7 +6,6 @@ ootb_supplychain_basic_install:
   external_delivery: true
   carvel_package:
     workflow_enabled: true
-    gitops_subpath: packages
     name_suffix: cssa.vmware.com
     openapiv3_enabled: true
   gitops:
