@@ -28,7 +28,7 @@ tap_install:
               user: postgres
             prefix: tap_learn_
         permission:
-          enabled: true
+          enabled: false
           adminRefs:
             - user:default/x95castle1
             - user:default/mpluya
@@ -49,10 +49,6 @@ tap_install:
     appliveview:
       ingressEnabled: true
       ingress_issuer: letsencrypt-production
-
-    accelerator:
-      ingress:
-        include: true
 
     metadata_store:
       ingress_enabled: "true"
