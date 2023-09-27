@@ -25,7 +25,6 @@ tap_install:
           secretRef:
             name: sync-git
             namespace: tanzu-sync
-            create_export: true
         path: _ytt_lib/workload-creds
       - git:
           url: ssh://git@github.com/Mpluya/tap-namespaces
