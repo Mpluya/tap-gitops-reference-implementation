@@ -29,7 +29,7 @@ tap_install:
       - git:
           url: ssh://git@github.com/Mpluya/tap-namespaces
           ref: origin/main
-          subPath: additional-resources-run
+          subPath: additional-resources-run-production
           secretRef:
             name: sync-git
             namespace: tanzu-sync
