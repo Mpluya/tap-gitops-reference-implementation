@@ -34,7 +34,7 @@ tap_install:
           secretRef:
             name: sync-git-ssh
             namespace: tanzu-sync
-        path: _ytt_lib/workload-creds        
+        path: _ytt_lib/addons      
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
