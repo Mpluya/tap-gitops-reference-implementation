@@ -23,10 +23,18 @@ tap_install:
           ref: origin/main
           subPath: credentials
           secretRef:
-            name: sync-git-ssh-also
+            name: sync-git-ssh
             namespace: tanzu-sync
             create_export: true
         path: _ytt_lib/workload-creds
+      - git:
+          url: ssh://git@github.com/Mpluya/tap-namespaces
+          ref: origin/main
+          subPath: additional-resources
+          secretRef:
+            name: sync-git-ssh
+            namespace: tanzu-sync
+        path: _ytt_lib/workload-creds        
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
