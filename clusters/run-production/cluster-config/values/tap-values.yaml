@@ -42,7 +42,6 @@ tap_install:
         secretRef:
           name: sync-git
           namespace: tanzu-sync
-          create_export: true
       import_data_values_secrets:
       - name: tenant-secrets
         namespace: tap-install
