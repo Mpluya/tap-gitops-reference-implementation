@@ -8,7 +8,7 @@ secrets:
     remote_refs:
       sync_git_ssh:
         ssh_private_key:
-          key: dev/tap-run/tanzu-sync/sync-gits
+          key: dev/tap-run/tanzu-sync/sync-git
           property: ssh-privatekey
         ssh_known_hosts:
           key: dev/tap-run/tanzu-sync/sync-git
