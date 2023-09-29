@@ -3,7 +3,7 @@ apiVersion: kappctrl.k14s.io/v1alpha1
 kind: App
 metadata:
   name: upbound-aws-provider
-  namespace: tanzu-sync
+  namespace: tap-install
   annotations:
     kapp.k14s.io/change-group: upbound-aws-provider
     kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
