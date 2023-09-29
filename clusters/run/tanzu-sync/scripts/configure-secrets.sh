@@ -40,10 +40,10 @@ secrets:
     remote_refs:
       sync_git_ssh:
         ssh_private_key:
-          key: dev/${EKS_CLUSTER_NAME}/tanzu-sync/sync-git-ssh
+          key: dev/${EKS_CLUSTER_NAME}/tanzu-sync/sync-git
           property: ssh-privatekey
         ssh_known_hosts:
-          key: dev/${EKS_CLUSTER_NAME}/tanzu-sync/sync-git-ssh
+          key: dev/${EKS_CLUSTER_NAME}/tanzu-sync/sync-git
           property: ssh-knownhosts
       install_registry_dockerconfig:
         dockerconfigjson:
