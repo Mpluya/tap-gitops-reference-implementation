@@ -1,0 +1,22 @@
+---
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: upbound-aws-provider-config
+  namespace: tap-install
+  annotations:
+    kapp.k14s.io/change-rule.upsert-provider-config: "upsert after upserting upbound-aws-provider"
+    kapp.k14s.io/change-rule.delete-provider-config: "delete before deleting upbound-aws-provider"
+spec:
+  serviceAccountName: tap-installer-sa
+  fetch:
+    - git:
+        url: ssh://git@github.com/Mpluya/upbound-crossplane
+        ref: origin/main
+        secretRef:
+          name: sync-git
+        subPath: provider-family-config
+  template:
+    - ytt: {}
+  deploy:
+    - kapp: {}
