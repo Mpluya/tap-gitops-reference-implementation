@@ -9,6 +9,13 @@ tap_install:
       image_registry:  
         project_path: "registry.harbor.learn.tapsme.org/tap-build"
 
+    amr:
+      observer:
+        auth:
+          kubernetes_service_accounts:
+            enable: true
+            autoconfigure: true
+
     buildservice:
       injected_sidecar_support: true
 
