@@ -13,4 +13,3 @@ stringData:
       kubernetes.podspec-tolerations: enabled
       #@overlay/match missing_ok=True
       kubernetes.podspec-affinity: enabled
-  
