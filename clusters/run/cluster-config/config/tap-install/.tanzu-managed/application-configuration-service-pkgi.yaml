@@ -12,5 +12,5 @@ spec:
   packageRef:
     refName: application-configuration-service.tanzu.vmware.com
     versionSelection:
-      constraints: 2.1.1
+      constraints: ">2.1.1"
       prereleases: {}
