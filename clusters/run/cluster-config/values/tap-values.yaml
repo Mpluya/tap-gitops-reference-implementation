@@ -58,4 +58,4 @@ tap_install:
     package_overlays:
     - name: "cnrs"
       secrets: 
-      - name: "config-features-overlay"
+      - name: "config-overlays"
