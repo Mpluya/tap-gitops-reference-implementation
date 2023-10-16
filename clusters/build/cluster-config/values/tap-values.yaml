@@ -18,7 +18,9 @@ tap_install:
           kubernetes_service_accounts:
             enable: true
             autoconfigure: true
-
+            secret:
+              ref: "amr-observer-editor-token"
+  
     buildservice:
       injected_sidecar_support: true
 
