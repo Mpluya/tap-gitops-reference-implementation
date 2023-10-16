@@ -51,10 +51,6 @@ tap_install:
           name: store-auth-token
           importFromNamespace: metadata-store-secrets
 
-    scanning:
-      metadataStore:
-        url: ""
-
     package_overlays:
     - name: "ootb-supply-chain-testing-scanning"
       secrets: 
