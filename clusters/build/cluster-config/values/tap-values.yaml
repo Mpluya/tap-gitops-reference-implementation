@@ -11,6 +11,9 @@ tap_install:
 
     amr:
       observer:
+        cloudevent_handler:
+          endpoint: "https://amr-cloudevent-handler.view.success.tapsme.org"
+          liveness_period_seconds: 10
         auth:
           kubernetes_service_accounts:
             enable: true
