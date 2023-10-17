@@ -69,7 +69,7 @@ apiVersion: secretgen.carvel.dev/v1alpha1
 kind: SecretImport
 metadata:
   name: install-registry-dockerconfig
-  namespace: mae
+  namespace: jeremy
   annotations:
     kapp.k14s.io/change-group: post-pkgi
     kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
@@ -81,7 +81,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: tap-acme-http01-solver
-  namespace: mae
+  namespace: jeremy
   annotations:
     kapp.k14s.io/change-group: post-pkgi
     kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
