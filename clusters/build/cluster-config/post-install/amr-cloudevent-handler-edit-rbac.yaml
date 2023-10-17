@@ -1,4 +1,34 @@
 ---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: tanzu:amr:observer:editor
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: ClusterRole
+  name: tanzu:amr:observer:edit
+subjects:
+  - kind: ServiceAccount
+    name: amr-observer-editor
+    namespace: amr-observer-system
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: tanzu:amr:observer:edit
+rules:
+  - apiGroups: ["cloudevents.amr.apps.tanzu.vmware.com"]
+    resources: ["*"]
+    verbs: ["update"]
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: amr-observer-editor
+  namespace: amr-observer-system
+  annotations:
+automountServiceAccountToken: false
+---
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
@@ -9,7 +39,6 @@ spec:
     name: cluster-secret-store
     kind: ClusterSecretStore
   refreshInterval: "1m"
-
   target:
     template:
       metadata:
