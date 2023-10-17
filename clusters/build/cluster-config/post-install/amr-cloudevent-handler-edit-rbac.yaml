@@ -32,7 +32,7 @@ automountServiceAccountToken: false
 apiVersion: external-secrets.io/v1beta1
 kind: ExternalSecret
 metadata:
-  name: amr-observer-editor-token-test
+  name: amr-observer-editor-token
   namespace: amr-observer-system
 spec:
   secretStoreRef:
