@@ -1,9 +1,0 @@
-apiVersion: packaging.carvel.dev/v1alpha1
-kind: PackageRepository
-metadata:
-  name: multi-purpose-conventions-repository
-  namespace: tap-install
-spec:
-  fetch:
-    imgpkgBundle:
-      image: projects.registry.vmware.com/tanzu_practice/conventions/multi-purpose-convention-server-bundle-repo:0.30.0
