@@ -7,6 +7,17 @@ tap_install:
       ingress_domain: run.prep.tapsme.org
       ingress_issuer: letsencrypt-production
     supply_chain: basic
+    amr:
+      observer:
+        cloudevent_handler:
+          endpoint: "https://amr-cloudevent-handler.view.success.tapsme.org"
+          liveness_period_seconds: 10
+        auth:
+          kubernetes_service_accounts:
+            enable: true
+            autoconfigure: true
+            secret:
+              ref: "amr-observer-editor-token"
     contour:
       envoy:
         service:
