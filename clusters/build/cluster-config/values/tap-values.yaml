@@ -60,9 +60,6 @@ tap_install:
     - name: "ootb-supply-chain-testing-scanning"
       secrets: 
       - name: "ootb-supply-chain-make-maven-url-param-default"
-    - name: "ootb-templates"
-      secrets: 
-      - name: "convention-service-overlay"
 
     namespace_provisioner:
       controller: false
