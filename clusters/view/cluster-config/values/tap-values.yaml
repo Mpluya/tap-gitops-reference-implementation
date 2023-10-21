@@ -45,7 +45,7 @@ tap_install:
           locations:
             - type: url
               target: https://github.com/maelarge/tap-catalog/blob/main/catalog-info.yaml                  
-
+    
     appliveview:
       ingressEnabled: true
       ingress_issuer: letsencrypt-production
@@ -184,3 +184,8 @@ tap_install:
         zqrtaVdUg9bwyAUCDgy0GV9RHDIdNAOInU/4LEETovrtuBU7Z1q4tcHXvN6Hd1H8
         gMb0mCG5I393qW5hFsA/diFb
         -----END CERTIFICATE-----
+
+    package_overlays:
+    - name: tap-gui
+      secrets:
+      - name: tdp-app-image-overlay-secret
