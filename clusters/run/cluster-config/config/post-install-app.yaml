@@ -1,0 +1,21 @@
+apiVersion: kappctrl.k14s.io/v1alpha1
+kind: App
+metadata:
+  name: post-install-app
+  namespace: tap-install
+spec:
+  serviceAccountName: tap-installer-sa
+  fetch:
+  - git:
+      url: ssh://git@github.com/Mpluya/tap-gitops-reference-implementation.git
+      ref: origin/main
+      secretRef: 
+        name: sync-git-ssh
+      subPath: clusters/run/cluster-config/post-install
+  template:
+  - ytt: {}
+  deploy:
+  - kapp:
+      rawOptions:
+      - --diff-changes=true
+      - --dangerous-allow-empty-list-of-resources=true
