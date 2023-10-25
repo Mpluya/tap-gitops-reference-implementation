@@ -13,6 +13,11 @@ tap_install:
       envoy:
         service:
           type: LoadBalancer
+
+    api_portal:
+      apiPortalServer:
+        sourceUrls: "https://customer-profile.mae.run.prep.tapsme.org/api-docs"
+
     tap_gui:
       metadataStoreAutoconfiguration: true
       service_type: ClusterIP
