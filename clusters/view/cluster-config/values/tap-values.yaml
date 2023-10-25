@@ -17,6 +17,17 @@ tap_install:
     api_portal:
       apiPortalServer:
         sourceUrls: "https://customer-profile.mae.run.prep.tapsme.org/api-docs,https://customer-profile-too.mae.run.prep.tapsme.org/api-docs"
+      apiKey:
+        enabled: true
+        vault:
+          url: "https://vault.view.cssa.tapsme.org/"        # Required: You may use "http://vault.vault.svc:8200/" if Vault is installed in the same cluster as API portal
+          role: api-portal-role        # Required: Same as the role name you created in the previous step
+          path: api-portal-for-vmware-tanzu # Optional: defaults to `api-portal-for-vmware-tanzu` if not specified. Make sure to use the same path you created and configured in the previous steps
+
+      serviceAccount:
+        create: true      # You may set it to false if you'd like to create the service account manually
+        name: api-portal  # Defaults to `default` if not specified
+
 
     tap_gui:
       metadataStoreAutoconfiguration: true
