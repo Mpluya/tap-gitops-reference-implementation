@@ -10,7 +10,7 @@ spec:
       url: ssh://git@github.com/Mpluya/tap-gitops-reference-implementation.git
       ref: origin/main
       secretRef: 
-        name: sync-git-ssh
+        name: sync-git
       subPath: clusters/run/cluster-config/post-install
   template:
   - ytt: {}
