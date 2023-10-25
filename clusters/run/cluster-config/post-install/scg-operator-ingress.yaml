@@ -1,5 +1,3 @@
-#@ load("@ytt:data", "data")
----
 apiVersion: projectcontour.io/v1
 kind: HTTPProxy
 metadata:
@@ -32,7 +30,7 @@ spec:
     - vmware
     organizationalUnits:
     - vmware mambg
-  secretName: scg-ingress-cert
+  secretName: scg-openapi-ingress-cert
   isCA: false
   dnsNames:
   - scg-openapi.run.prep.tapsme.org
