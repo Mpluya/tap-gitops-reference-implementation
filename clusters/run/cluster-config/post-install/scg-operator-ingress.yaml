@@ -12,7 +12,7 @@ spec:
       secretName: scg-openapi-ingress-cert
   routes:
   - services:
-    - name: api-gateway
+    - name: scg-operator
       port: 80
 ---
 apiVersion: cert-manager.io/v1
