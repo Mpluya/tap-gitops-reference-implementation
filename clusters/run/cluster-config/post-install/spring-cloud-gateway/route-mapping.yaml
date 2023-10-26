@@ -11,7 +11,7 @@ spec:
         generation:
           enabled: true
       predicates:
-        - Path=/poo/**
+        - Path=/api/**
 ---
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayMapping
