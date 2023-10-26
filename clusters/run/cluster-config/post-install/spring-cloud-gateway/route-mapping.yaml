@@ -12,12 +12,6 @@ spec:
           enabled: true
       predicates:
         - Path=/poo/**
-    - uri: https://customer-profile.mae.run.prep.tapsme.org/api-docs
-      openapi:
-        generation:
-          enabled: true
-      predicates:
-        - Path=/poo2/**
 ---
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayMapping
