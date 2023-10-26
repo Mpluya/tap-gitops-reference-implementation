@@ -3,6 +3,10 @@ kind: SpringCloudGateway
 metadata:
   name: mae-api-gateway
   namespace: mae
+  annotations:
+    apis.tanzu.vmware.com/api-title: 'My Exciting APIs'
+    apis.tanzu.vmware.com/api-description: 'Lots of new exciting APIs for you to use!'
+    apis.tanzu.vmware.com/api-documentation: 'https://docs.example.org'
   labels:
     tanzu.app.live.view: "true"
     tanzu.app.live.view.application.actuator.port: "8090"
