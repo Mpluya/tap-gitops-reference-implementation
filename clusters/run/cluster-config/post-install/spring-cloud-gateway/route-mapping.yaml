@@ -6,7 +6,7 @@ metadata:
   namespace: mae
 spec:
   routes:
-    - uri: https://httpbingo.org
+    - uri: https://customer-profile.mae.run.prep.tapsme.org
       predicates:
         - Path=/poo/**
 ---
