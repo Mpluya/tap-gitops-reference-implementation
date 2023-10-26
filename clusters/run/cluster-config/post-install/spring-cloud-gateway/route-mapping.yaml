@@ -2,7 +2,7 @@
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayRouteConfig
 metadata:
-  name: my-gateway-routes
+  name: mae-gateway-routes
   namespace: mae
 spec:
   routes:
@@ -13,10 +13,10 @@ spec:
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayMapping
 metadata:
-  name: test-gateway-mapping
+  name: mae-gateway-mapping
   namespace: mae
 spec:
   gatewayRef:
-    name: api-gateway
+    name: mae-api-gateway
   routeConfigRef:
-    name: my-gateway-routes
+    name: mae-gateway-routes
