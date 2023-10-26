@@ -16,7 +16,7 @@ tap_install:
 
     api_portal:
       apiPortalServer:
-        sourceUrls: "https://customer-profile.mae.run.prep.tapsme.org/api-docs,https://scg-openapi.run.prep.tapsme.org/openapi,https://mae-gateway.run.prep.tapsme.org/poo/api-docs"
+        sourceUrls: "https://customer-profile.mae.run.prep.tapsme.org/api-docs,https://mae-gateway.run.prep.tapsme.org/poo/api-docs"
       sso:
         enabled: true
         secretName: sso-credentials
