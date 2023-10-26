@@ -12,6 +12,12 @@ spec:
           enabled: true
       predicates:
         - Path=/poo/**
+    - uri: https://httpbingo.org
+      openapi:
+        generation:
+          enabled: true
+      predicates:
+        - Path=/bingo/**
 ---
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayMapping
