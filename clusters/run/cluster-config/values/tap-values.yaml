@@ -45,14 +45,6 @@ tap_install:
             name: sync-git
             namespace: tanzu-sync
         path: _ytt_lib/addons
-      - git:
-          url: ssh://git@github.com/Mpluya/tap-namespaces
-          ref: origin/main
-          subPath: spring-cloud-gateway
-          secretRef:
-            name: sync-git
-            namespace: tanzu-sync
-        path: _ytt_lib/scg 
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
