@@ -28,8 +28,8 @@ tap_install:
           path: api-portal-for-vmware-tanzu # Optional: defaults to `api-portal-for-vmware-tanzu` if not specified. Make sure to use the same path you created and configured in the previous steps
 
       serviceAccount:
-        create: true      # You may set it to false if you'd like to create the service account manually
-        name: api-portal  # Defaults to `default` if not specified
+        create: false      # You may set it to false if you'd like to create the service account manually
+        name: api-portal-sa  # Defaults to `default` if not specified
 
 
     tap_gui:
