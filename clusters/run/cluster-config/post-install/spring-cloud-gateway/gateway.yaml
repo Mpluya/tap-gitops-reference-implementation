@@ -29,5 +29,5 @@ spec:
           path: api-portal-for-vmware-tanzu
     filters:
       apiKey:
-        enabled: true
+        enabled: false
         secretsProviderName: vault-api-keys
