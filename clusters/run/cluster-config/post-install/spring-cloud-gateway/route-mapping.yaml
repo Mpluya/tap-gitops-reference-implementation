@@ -19,7 +19,7 @@ spec:
       predicates:
         - Path=/bingo/**
       filters:
-      - RateLimit=1,10s,{IPs:69.174.173.80}
+      - RateLimit=1,10s,{IPs:70.163.251.107}
 ---
 apiVersion: "tanzu.vmware.com/v1"
 kind: SpringCloudGatewayMapping
