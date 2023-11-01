@@ -51,3 +51,13 @@ eksctl create iamserviceaccount \
   --attach-policy-arn arn:aws:iam::${AWS_ACCOUNT_ID}:policy/${IAM_POLICY_NAME_FOR_TAP} \
   --override-existing-serviceaccounts \
   --approve
+
+# THIS IS additional irsa to reuse tenant related secrets initially setup in our tap build cluster
+eksctl create iamserviceaccount \
+    --name ${CLUSTER_NAME}-tenant-install-secrets \
+    --namespace tap-install \
+    --cluster ${CLUSTER_NAME} \
+    --role-name ${CLUSTER_NAME}--tap-tenant-install-secrets \
+    --attach-policy-arn arn:aws:iam::${AWS_ACCOUNT_ID}:policy/cg-eks-build--read-tap-secrets \
+    --approve \
+    --override-existing-serviceaccounts
