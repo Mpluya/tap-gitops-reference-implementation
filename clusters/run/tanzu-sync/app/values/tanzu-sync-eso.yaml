@@ -4,15 +4,15 @@ secrets:
     aws:
       region: us-west-2
       tanzu_sync_secrets:
-        role_arn: arn:aws:iam::375783000519:role/tap-run--tanzu-sync-secrets
+        role_arn: arn:aws:iam::692116071922:role/cg-eks-run--tanzu-sync-secrets
     remote_refs:
       sync_git_ssh:
         ssh_private_key:
-          key: dev/tap-run/tanzu-sync/sync-git/ssh
-          property: privatekey
+          key: dev/cg-eks-run/tanzu-sync/sync-git
+          property: ssh-privatekey
         ssh_known_hosts:
-          key: dev/tap-run/tanzu-sync/sync-git/ssh
-          property: knownhosts
+          key: dev/cg-eks-run/tanzu-sync/sync-git
+          property: ssh-knownhosts
       install_registry_dockerconfig:
         dockerconfigjson:
-          key: dev/tap-run/tanzu-sync/install-registry-dockerconfig
+          key: dev/cg-eks-run/tanzu-sync/install-registry-dockerconfig
