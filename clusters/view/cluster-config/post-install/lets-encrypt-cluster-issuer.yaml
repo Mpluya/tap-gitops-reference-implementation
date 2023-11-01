@@ -154,7 +154,7 @@ apiVersion: v1
 kind: ServiceAccount
 metadata:
   name: tap-acme-http01-solver
-  namespace: accetaplerator-system
+  namespace: accelerator-system
   annotations:
     kapp.k14s.io/change-group: post-pkgi
     kapp.k14s.io/change-rule.0: "upsert after upserting pkgi"
