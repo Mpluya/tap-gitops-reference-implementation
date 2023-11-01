@@ -50,9 +50,9 @@ spec:
   data:
   - secretKey: amr_observer_ca_crt
     remoteRef:
-      key: dev/tap-build/tap/tenant-install-secrets
+      key: dev/cg-eks-build/tap/tenant-install-secrets
       property: amr_observer_ca_crt
   - secretKey: amr_observer_auth_token
     remoteRef:
-      key: dev/tap-build/tap/tenant-install-secrets
+      key: dev/cg-eks-build/tap/tenant-install-secrets
       property: amr_observer_auth_token
