@@ -21,13 +21,14 @@ tap_install:
         backend:
           database:
             client: pg
+            pluginDivisionMode: schema
             connection:
-              host: postgres.c2mmwognazlt.us-west-2.rds.amazonaws.com
+              database: tap_gui
+              host: tap-gui.c2mmwognazlt.us-west-2.rds.amazonaws.com
               port: 5432
               ssl:
                 rejectUnauthorized: false
               user: postgres
-            prefix: tap_learn_
         permission:
           enabled: false
           adminRefs:
@@ -55,8 +56,8 @@ tap_install:
       ingress_enabled: "true"
       app_service_type: "ClusterIP"
       ns_for_export_app_cert: "*"
-      db_host: postgres.c2mmwognazlt.us-west-2.rds.amazonaws.com
-      db_name: postgres
+      db_host: metadata-store.c2mmwognazlt.us-west-2.rds.amazonaws.com
+      db_name: metadatastore
       db_sslmode: verify-ca
       db_user: postgres
       deploy_internal_db: "false"
