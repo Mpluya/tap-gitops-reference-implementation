@@ -37,6 +37,10 @@ tap_install:
         repository_owner: "Mpluya"
         repository_name: "tap-workload-config-repo"
         branch: main
+        
+      supported_workloads:
+      - type: custom
+        cluster_config_template_name: custom-template
       
       scanning:
         image:
