@@ -1,6 +1,7 @@
 ---
 tap_install:
   values:
+    label_propagation_exclusions: ["kapp.k14s.io/app", "kapp.k14s.io/association"] 
     profile: build
     ceip_policy_disclosed: true
 
@@ -37,7 +38,7 @@ tap_install:
         repository_owner: "Mpluya"
         repository_name: "tap-workload-config-repo"
         branch: main
-        
+
       supported_workloads:
       - type: custom
         cluster_config_template_name: custom-template
