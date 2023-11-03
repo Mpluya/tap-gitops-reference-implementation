@@ -14,4 +14,4 @@ spec:
   packageRef:
     refName: app-scanning.apps.tanzu.vmware.com
     versionSelection:
-      constraints: ">0.2.1"
+      constraints: ">=0.2.1"
