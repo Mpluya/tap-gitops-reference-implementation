@@ -42,6 +42,8 @@ tap_install:
       - type: custom
         cluster_config_template_name: custom-template
       
+      label_propagation_exclusions: ["kapp.k14s.io/app", "kapp.k14s.io/association"]
+      
       scanning:
         image:
           policy: lax-scan-policy
