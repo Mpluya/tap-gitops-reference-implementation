@@ -30,7 +30,7 @@ spec:
   healthRule:
     alwaysHealthy: {}
 
-  #@ label_exclusions = "[\"" + "\", \"".join(data.values.tap_install.values.label_propagation_exclusions) + "\"]"
+  #@ label_exclusions = "[\"" + "\", \"".join(data.values.label_propagation_exclusions) + "\"]"
   #@yaml/text-templated-strings
   ytt: |
     #@ load("@ytt:data", "data")
