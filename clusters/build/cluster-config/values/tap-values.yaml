@@ -1,6 +1,6 @@
 ---
-label_propagation_exclusions: ["kapp.k14s.io/app", "kapp.k14s.io/association"]
 tap_install:
+  label_propagation_exclusions: ["kapp.k14s.io/app", "kapp.k14s.io/association"]
   values:
     profile: build
     ceip_policy_disclosed: true
