@@ -1,0 +1,11 @@
+apiVersion: eksctl.io/v1alpha5
+kind: ClusterConfig
+metadata:
+  name: "cg-eks-run"
+  region: "us-west-2"
+identityProviders:
+  - name: auth0
+    type: oidc
+    issuerUrl: "https://dev-pbi3csp88xs4ezg5.us.auth0.com/"
+    clientId: "vcQ7lpPZ1sk96jxizlhVsKCoNrzN6vus"
+    usernameClaim: email
