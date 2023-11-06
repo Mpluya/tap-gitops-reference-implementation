@@ -40,6 +40,3 @@ tap_install:
     #@schema/desc "Version of the tap.tanzu.vmware.com Package being installed."
     package_version: ""
 
-#@schema/title "Label Propogation Exclusions"
-#@schema/desc "Internal Use Only. Labels to not override Kapp Ownership"
-label_propagation_exclusions: [""]
