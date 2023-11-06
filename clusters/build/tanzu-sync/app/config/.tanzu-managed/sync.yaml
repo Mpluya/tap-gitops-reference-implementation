@@ -24,13 +24,6 @@ spec:
         subPath: #@ data.values.git.sub_path
   template:
     - ytt:
-        ignoreUnknownComments: true
-        inline:
-          paths:
-            values.yaml: |
-              #@data/values
-              ---
-              label_propagation_exclusions: ["kapp.k14s.io/app", "kapp.k14s.io/association"]
         paths: 
         - config
         valuesFrom:
