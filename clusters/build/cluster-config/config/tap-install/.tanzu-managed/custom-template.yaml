@@ -30,6 +30,7 @@ spec:
   healthRule:
     alwaysHealthy: {}
 
+  #@ label_exclusions = "[\"" + "\", \"".join(data.values.label_propagation_exclusions) + "\"]"
   #@yaml/text-templated-strings
   ytt: |
     #@ load("@ytt:data", "data")
@@ -40,8 +41,11 @@ spec:
     #@ def merge_labels(fixed_values):
     #@   labels = {}
     #@   if hasattr(data.values.workload.metadata, "labels"):
+    #@     exclusions = (@= label_exclusions @)
     #@     for k,v in dict(data.values.workload.metadata.labels).items():
-    #@       labels[k] = v
+    #@       if k not in exclusions:
+    #@         labels[k] = v
+    #@       end
     #@     end
     #@   end
     #@   labels.update(fixed_values)
