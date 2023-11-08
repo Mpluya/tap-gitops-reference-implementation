@@ -14,7 +14,7 @@ spec:
   refreshInterval: "1m"
   target:
     template:
-      data: |
+      data:
         scope: "openid,profile,email"
         client-id: "tcXPnhH0G2xrX4hD3XQihr3Tjpc1SKJA"
         issuer-uri: "https://dev-pbi3csp88xs4ezg5.us.auth0.com/"
