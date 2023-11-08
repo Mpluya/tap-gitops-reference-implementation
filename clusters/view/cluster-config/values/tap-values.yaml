@@ -19,7 +19,7 @@ tap_install:
         sourceUrls: "https://customer-profile-too.mae.run.prep.tapsme.org/api-docs,https://scg-openapi.run.prep.tapsme.org/openapi"
       sso:
         enabled: true
-        secretName: sso-credentials
+        secretName: api-portal-sso-credentials
       apiKey:
         enabled: true
         vault:
