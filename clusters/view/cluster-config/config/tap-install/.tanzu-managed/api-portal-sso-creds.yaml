@@ -24,3 +24,20 @@ spec:
     remoteRef:
       key: dev/cg-eks-view/tap/api-portal-sso-credentials
       property: client_secret
+---
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretExport
+metadata:
+  name: api-portal-sso-credentials
+  namespace: tap-install
+spec:
+  toNamespaces:
+  - api-portal
+---
+apiVersion: secretgen.carvel.dev/v1alpha1
+kind: SecretImport
+metadata:
+  name: api-portal-sso-credentials
+  namespace: api-portal
+spec:
+  fromNamespace: tap-install
