@@ -70,3 +70,6 @@ tap_install:
     - name: "cnrs"
       secrets: 
       - name: "config-overlays"
+    - name: "ootb-delivery-basic"
+      secrets:
+      - name: "ootb-cluster-delivery-overlay"
