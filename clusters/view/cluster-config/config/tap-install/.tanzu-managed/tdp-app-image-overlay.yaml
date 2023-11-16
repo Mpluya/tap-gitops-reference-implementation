@@ -22,7 +22,7 @@ stringData:
               - -c
               - |
                 export KUBERNETES_SERVICE_ACCOUNT_TOKEN="$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)"
-                exec /layers/tanzu-buildpacks_node-engine-lite/node/bin/node portal/dist/packages/backend  \
+                exec /layers/paketo-buildpacks_node-engine/node/bin/node portal/dist/packages/backend  \
                 --config=portal/app-config.yaml \
                 --config=portal/runtime-config.yaml \
                 --config=/etc/app-config/app-config.yaml
