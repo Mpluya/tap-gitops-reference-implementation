@@ -1,0 +1,11 @@
+---
+apiVersion: v1
+kind: Secret
+metadata:
+  name: scg-values
+  namespace: tap-install
+stringData:
+  values.yaml: |
+    route_provider:
+      spring_cloud_gateway:
+        scg_openapi_service_url: "http://scg-openapi-service.spring-cloud-gateway.svc.cluster.local"
