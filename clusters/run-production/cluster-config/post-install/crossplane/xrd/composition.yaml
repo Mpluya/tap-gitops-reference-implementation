@@ -13,7 +13,40 @@ spec:
   publishConnectionDetailsWithStoreConfigRef:
     name: default
   resources:
-  - base:
+  - name: dbsubnetgroup
+    base:
+      apiVersion: rds.aws.upbound.io/v1beta1
+      kind: SubnetGroup
+      spec:
+        forProvider:
+          description: "cg eks run-prod subnet group"
+          region: us-west-2
+          subnetIds:
+            - subnet-0542118f0e4715019
+            - subnet-07ea5c1dcbebce36c
+            - subnet-095176809c77e6593
+            - subnet-0352c78d23acdd082
+            - subnet-0352c78d23acdd082
+            - subnet-015d77dfab6ef1eaa
+  - name: securitygroup
+    base:
+      apiVersion: ec2.aws.upbound.io/v1beta1
+      kind: SecurityGroup
+      spec:
+        forProvider:
+          description: Allow access to PostgreSQL
+          groupName: crossplane-postgres-getting-started
+          ingress:
+            - fromPort: 5432
+              ipProtocol: tcp
+              ipRanges:
+                - cidrIp: 0.0.0.0/0
+                  description: Everywhere
+              toPort: 5432
+          region: us-west-2
+          vpcId: vpc-06cdffae443c031a7
+  - name: instance
+    base:
       apiVersion: rds.aws.upbound.io/v1beta1
       kind: Instance
       spec:
@@ -31,8 +64,11 @@ spec:
           publiclyAccessible: true
           region: us-west-2
           skipFinalSnapshot: true
-          vpcSecurityGroupIds:
-            - sg-04a2a4cf9658c4625
+          dbSubnetGroupNameSelector:
+            matchControllerRef: true
+          vpcSecurityGroupIds: []
+          vpcSecurityGroupIDSelector:
+            matchControllerRef: true
         writeConnectionSecretToRef:
           namespace: crossplane-system
     connectionDetails:
@@ -47,7 +83,6 @@ spec:
     - name: host
       fromConnectionSecretKey: address
     - fromConnectionSecretKey: port
-    name: instance
     patches:
     - fromFieldPath: metadata.uid
       toFieldPath: spec.forProvider.passwordSecretRef.name
