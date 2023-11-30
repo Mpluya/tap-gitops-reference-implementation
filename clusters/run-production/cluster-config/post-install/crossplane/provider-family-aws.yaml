@@ -24,6 +24,15 @@ spec:
   controllerConfigRef:
     name: upbound-provider-family-aws
 ---
+apiVersion: pkg.crossplane.io/v1
+kind: Provider
+metadata:
+  name: provider-aws-ec2
+spec:
+  package: xpkg.upbound.io/upbound/provider-aws-ec2:v0.36.0
+  controllerConfigRef:
+    name: upbound-provider-family-aws
+---
 # The ControllerConfig applies settings to a Provider Pod.
 # With family Providers each Provider is a unique Pod running in the cluster.
 apiVersion: pkg.crossplane.io/v1alpha1
