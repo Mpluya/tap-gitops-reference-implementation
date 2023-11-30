@@ -26,8 +26,8 @@ spec:
             - subnet-07ea5c1dcbebce36c
             - subnet-095176809c77e6593
             - subnet-0352c78d23acdd082
-            - subnet-0352c78d23acdd082
             - subnet-015d77dfab6ef1eaa
+            - subnet-09ac9390418eee635
   - name: securitygroup
     base:
       apiVersion: ec2.aws.upbound.io/v1beta1
