@@ -78,31 +78,6 @@ spec:
 
     #@ def delivery():
     ---
-    #@ "#@ load(\"@ytt:data\", \"data\")".format()
-    apiVersion: networking.k8s.io/v1
-    kind: Ingress
-    metadata:
-      name: #@ data.values.workload.metadata.name
-      annotations:
-        ingress.kubernetes.io/force-ssl-redirect: "true"
-        kubernetes.io/ingress.class: contour
-        kapp.k14s.io/change-rule: "upsert after upserting Services"
-      labels:
-        app.kubernetes.io/component: "run"
-        carto.run/workload-name:  #@ data.values.workload.metadata.name
-    spec:
-      rules:
-      - host: #@ data.values.workload.metadata.name + " + #@ data.values.domain"
-        http:
-          paths:
-          - pathType: Prefix
-            path: /
-            backend:
-              service:
-                name: #@ data.values.workload.metadata.name
-                port:
-                  number: 80
-    ---
     apiVersion: apps/v1
     kind: Deployment
     metadata:
@@ -138,6 +113,34 @@ spec:
       #@ end
     #@ end
 
+    #@ def ingress():
+    ---
+    #@ "#@ load(\"@ytt:data\", \"data\")".format()
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: #@ data.values.workload.metadata.name
+      annotations:
+        ingress.kubernetes.io/force-ssl-redirect: "true"
+        kubernetes.io/ingress.class: contour
+        kapp.k14s.io/change-rule: "upsert after upserting Services"
+      labels:
+        app.kubernetes.io/component: "run"
+        carto.run/workload-name:  #@ data.values.workload.metadata.name
+    spec:
+      rules:
+      - host: #@ data.values.workload.metadata.name + " + #@ data.values.domain"
+        http:
+          paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: #@ data.values.workload.metadata.name
+                port:
+                  number: 80
+    #@ end
+
     ---
     apiVersion: v1
     kind: ConfigMap
@@ -145,4 +148,4 @@ spec:
       name: #@ data.values.workload.metadata.name + "-server"
       labels: #@ merge_labels({ "app.kubernetes.io/component": "config" })
     data:
-      delivery.yml: #@ yaml.encode(delivery())
+      delivery.yml: #@ yaml.encode(delivery()) + "\n---\n" + ingress()
