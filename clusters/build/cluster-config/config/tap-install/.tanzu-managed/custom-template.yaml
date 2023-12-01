@@ -149,6 +149,6 @@ spec:
       #@yaml/text-templated-strings
       delivery.yml: |
         #@ load("@ytt:data", "data")
-        (@= yaml.encode(deliverable()) @)
+        (@= yaml.encode(delivery()) @)
         ---
-        ingress()
+        (@= ingress() @)
