@@ -114,8 +114,6 @@ spec:
     #@ end
 
     #@ def ingress():
-    ---
-    #@ "#@ load(\"@ytt:data\", \"data\")".format()
     apiVersion: networking.k8s.io/v1
     kind: Ingress
     metadata:
@@ -148,4 +146,9 @@ spec:
       name: #@ data.values.workload.metadata.name + "-server"
       labels: #@ merge_labels({ "app.kubernetes.io/component": "config" })
     data:
-      delivery.yml: #@ yaml.encode(delivery()) + "\n---\n" + ingress()
+      #@yaml/text-templated-strings
+      delivery.yml: |
+        #@ load("@ytt:data", "data")
+        (@= yaml.encode(deliverable()) @)
+        ---
+        ingress()
