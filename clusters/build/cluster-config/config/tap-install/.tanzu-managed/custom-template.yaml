@@ -78,6 +78,32 @@ spec:
 
     #@ def delivery():
     ---
+    #@ "#@ load(\"@ytt:data\", \"data\")"
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: #@ data.values.workload_name
+      annotations:
+        cert-manager.io/cluster-issuer:  #@ data.values.cluster_issuer
+        ingress.kubernetes.io/force-ssl-redirect: "true"
+        kubernetes.io/ingress.class: contour
+        kapp.k14s.io/change-rule: "upsert after upserting Services"
+      labels:
+        app.kubernetes.io/component: "run"
+        carto.run/workload-name:  #@ data.values.workload_name
+    spec:
+      rules:
+      - host: #@ data.values.workload_name + "." + " + #@ data.values.domain"
+        http:
+          paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: #@ data.values.workload_name
+                port:
+                  number: #@ data.values.port
+    ---
     apiVersion: apps/v1
     kind: Deployment
     metadata:
