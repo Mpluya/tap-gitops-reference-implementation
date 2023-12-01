@@ -45,6 +45,14 @@ tap_install:
             name: sync-git
             namespace: tanzu-sync
         path: _ytt_lib/addons
+      - git:
+          url: ssh://git@github.com/Mpluya/tap-namespaces
+          ref: origin/main
+          subPath: env/run-prod
+          secretRef:
+            name: sync-git
+            namespace: tanzu-sync
+        path: _ytt_lib/env
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
