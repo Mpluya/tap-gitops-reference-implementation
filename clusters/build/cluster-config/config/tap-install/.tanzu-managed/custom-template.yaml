@@ -84,7 +84,6 @@ spec:
     metadata:
       name: #@ data.values.workload.metadata.name
       annotations:
-        cert-manager.io/cluster-issuer:  #@ data.values.cluster_issuer
         ingress.kubernetes.io/force-ssl-redirect: "true"
         kubernetes.io/ingress.class: contour
         kapp.k14s.io/change-rule: "upsert after upserting Services"
