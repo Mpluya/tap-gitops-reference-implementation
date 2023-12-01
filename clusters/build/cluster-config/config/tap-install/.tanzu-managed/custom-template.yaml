@@ -92,7 +92,7 @@ spec:
         carto.run/workload-name:  #@ data.values.workload.metadata.name
     spec:
       rules:
-      - host: #@ data.values.workload.metadata.name " + #@ data.values.domain"
+      - host: #@ data.values.workload.metadata.name + " + #@ data.values.domain"
         http:
           paths:
           - pathType: Prefix
