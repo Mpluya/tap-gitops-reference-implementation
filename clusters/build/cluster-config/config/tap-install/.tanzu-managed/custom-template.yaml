@@ -101,7 +101,7 @@ spec:
               service:
                 name: #@ data.values.workload.metadata.name
                 port:
-                  number: #@ data.values.port
+                  number: 80
     ---
     apiVersion: apps/v1
     kind: Deployment
