@@ -146,9 +146,4 @@ spec:
       name: #@ data.values.workload.metadata.name + "-server"
       labels: #@ merge_labels({ "app.kubernetes.io/component": "config" })
     data:
-      #@yaml/text-templated-strings
-      delivery.yml: |
-        #@ load("@ytt:data", "data")
-        (@= yaml.encode(delivery()) @)
-        ---
-        (@= ingress() @)
+      delivery.yml: #@ yaml.encode(delivery())
