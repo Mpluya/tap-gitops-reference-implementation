@@ -97,7 +97,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     - name: clusterBuilder
       default: default
@@ -122,7 +122,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     images:
     - resource: image-provider
@@ -180,7 +180,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     configs:
     - resource: api-descriptors
@@ -195,7 +195,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     configs:
     - resource: carvel-package
@@ -278,7 +278,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     images:
     - resource: image-provider
@@ -336,7 +336,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     configs:
     - resource: api-descriptors
@@ -351,7 +351,7 @@ spec:
     - name: registry
       value:
         ca_cert_data: ""
-        server: registry.harbor.learn.tapsme.org
+        server: cxscssa.azurecr.io
         repository: tap-build/workloads
     configs:
     - resource: carvel-package

@@ -1,7 +1,7 @@
 ootb_supplychain_basic_install:
   registry:                                 
     ca_cert_data: ""                        
-    server: registry.harbor.learn.tapsme.org
+    server: cxscssa.azurecr.io
     repository: tap-build/workloads         
   external_delivery: true
   carvel_package:

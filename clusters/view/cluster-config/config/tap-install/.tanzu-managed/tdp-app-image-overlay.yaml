@@ -16,7 +16,7 @@ stringData:
           containers:
             #@overlay/match by=overlay.subset({"name": "backstage"}),expects="1+"
             #@overlay/match-child-defaults missing_ok=True
-            - image: registry.harbor.learn.tapsme.org/tap-build/workloads/tdp-configurator-mae@sha256:3f6ed9b8afd91a4e3a9163992a37b487bb60254859b3b62e304705a9c98e49b4 
+            - image: cxscssa.azurecr.io/tap-build/workloads/tdp-configurator-mae@sha256:3f6ed9b8afd91a4e3a9163992a37b487bb60254859b3b62e304705a9c98e49b4 
             #@overlay/replace
               args:
               - -c
