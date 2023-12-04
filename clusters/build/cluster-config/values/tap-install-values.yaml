@@ -1,4 +1,3 @@
 tap_install:
   package_repository:
-    oci_repository: registry.harbor.learn.tapsme.org/tap/tap-packages
-label_propagation_exclusions: ["kapp.k14s.io/app", "kapp.k14s.io/association"] 
+    oci_repository: cxscssa.azurecr.io/tap-1-7-0/tap-packages
