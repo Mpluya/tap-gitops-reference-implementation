@@ -48,15 +48,15 @@ stringData:
                 subPath: #@ data.values.params.gitops_sub_path
                 #@ end
           template:
-              - ytt:
-                  ignoreUnknownComments: true
-                  valuesFrom:
-                  - secretRef:
-                      name: tenant-config-slice
-                  inline:
-                    pathsFrom:
-                    - secretRef:
-                        name: ingress-overlay
-            - kbld: {}
+          - ytt:
+              ignoreUnknownComments: true
+              valuesFrom:
+              - secretRef:
+                  name: tenant-config-slice
+              inline:
+                pathsFrom:
+                - secretRef:
+                    name: ingress-overlay
+          - kbld: {}
           deploy:
             - kapp: {}
