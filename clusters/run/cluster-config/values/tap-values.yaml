@@ -81,3 +81,6 @@ tap_install:
     - name: "ootb-delivery-basic"
       secrets:
       - name: "ootb-cluster-delivery-overlay"
+    - name:  "ootb-templates"
+      secrets:
+      - name: "ootb-templates-overlay"
