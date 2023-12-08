@@ -16,6 +16,8 @@ stringData:
         #@ load("@ytt:data", "data")
         #@ load("@ytt:assert", "assert")
 
+        #@ label_exclusions = "[\"" + "\", \"".join(["kapp.k14s.io/app", "kapp.k14s.io/association"]) + "\"]"
+        
         #@ def merge_labels(fixed_values):
         #@   labels = {}
         #@   if hasattr(data.values.deliverable.metadata, "labels"):
