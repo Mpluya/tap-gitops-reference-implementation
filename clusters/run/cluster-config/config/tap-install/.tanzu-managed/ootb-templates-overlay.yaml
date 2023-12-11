@@ -51,8 +51,8 @@ stringData:
           - ytt:
               ignoreUnknownComments: true
               valuesFrom:
-              - secretRef:
-                  name: tenant-config-slice
+              - configMapRef:
+                  name: env-specific
               inline:
                 pathsFrom:
                 - secretRef:
