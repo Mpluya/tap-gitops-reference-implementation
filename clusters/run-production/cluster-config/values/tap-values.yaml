@@ -53,6 +53,14 @@ tap_install:
             name: sync-git
             namespace: tanzu-sync
         path: _ytt_lib/env
+      - git:
+          url: ssh://git@github.com/Mpluya/tap-namespaces
+          ref: origin/main
+          subPath: env/run-prod
+          secretRef:
+            name: sync-git
+            namespace: tanzu-sync
+        path: _ytt_lib/env
       gitops_install:
         ref: origin/main
         subPath: ns-provisioner-base
@@ -75,3 +83,7 @@ tap_install:
     - bitnami.services.tanzu.vmware.com
     - external-secrets.apps.tanzu.vmware.com
     - sso.apps.tanzu.vmware.com
+    package_overlays:
+    - name:  "ootb-templates"
+      secrets:
+      - name: "ootb-templates-overlay"

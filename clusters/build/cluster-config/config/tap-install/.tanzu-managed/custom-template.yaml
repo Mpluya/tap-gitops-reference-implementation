@@ -119,7 +119,6 @@ spec:
     metadata:
       name: #@ data.values.workload.metadata.name
       annotations:
-        ingress.kubernetes.io/force-ssl-redirect: "true"
         kubernetes.io/ingress.class: contour
         kapp.k14s.io/change-rule: "upsert after upserting Services"
       labels:
@@ -127,7 +126,7 @@ spec:
         carto.run/workload-name:  #@ data.values.workload.metadata.name
     spec:
       rules:
-      - host: #@ data.values.workload.metadata.name + " + #@ data.values.domain"
+      - host: #@ data.values.workload.metadata.name
         http:
           paths:
           - pathType: Prefix
@@ -136,7 +135,7 @@ spec:
               service:
                 name: #@ data.values.workload.metadata.name
                 port:
-                  number: 80
+                  number: 8080
     #@ end
 
     ---
