@@ -78,6 +78,29 @@ spec:
 
     #@ def delivery():
     ---
+    apiVersion: networking.k8s.io/v1
+    kind: Ingress
+    metadata:
+      name: #@ data.values.workload.metadata.name
+      annotations:
+        kubernetes.io/ingress.class: contour
+        kapp.k14s.io/change-rule: upsert after upserting Services
+      labels:
+        app.kubernetes.io/component: run
+        carto.run/workload-name: #@ data.values.workload.metadata.name
+    spec:
+      rules:
+      - host: #@ data.values.workload.metadata.name
+        http:
+          paths:
+          - pathType: Prefix
+            path: /
+            backend:
+              service:
+                name: #@ data.values.workload.metadata.name
+                port:
+                  number: 8080 #! MVP version
+    ---
     apiVersion: apps/v1
     kind: Deployment
     metadata:
